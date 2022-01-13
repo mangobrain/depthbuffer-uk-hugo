@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+// Our variables
+$base-font-family: "Source Sans Pro", sans-serif;
+$base-font-size:   1em;
+$base-font-weight: 200;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$text-color:       rgb(221, 221, 221);
+$background-color: rgb(30, 30, 30);
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+body
+{
+    margin: 0px;
+    padding: 0px;
+    background-color: $background-color;
+    line-height: $base-line-height;
+    text-align: justify;
+    font-family: $base-font-family;
+    font-weight: $base-font-weight;
+    font-feature-settings: "kern";
+    color: $text-color;
+
+    /* Take up full viewport height, with vertical header, main, footer */
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+header.top
+{
+    padding: 5px;
+    background: rgb(147,0,93);
+    background: linear-gradient(133deg, rgba(147,0,93,1) 0%, rgba(33,97,142,1) 100%);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+header.top img
+{
+    display: block;
+}
+
+header.top div.title
+{
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.5em;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+main
+{
+    padding: 2% 4%;
+
+    /* Mysterious hax to make footer stick to bottom */
+    flex: 1 0 auto;
+}
+
+main h1
+{
+    margin-top: 0;
+}
+
+main a:link
+{
+    color: #bad1a1;
+}
+
+main a:visited
+{
+    color: #98b080;
+}
+
+div.home, article
+{
+    background-color: $grey-color-dark;
+    border-radius: 10px;
+    display: block;
+    padding: 2%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+div.home h1, article h1
+{
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
+}
+
+div.post-list-item
+{
+    display: inline-flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.post-title
+{
+    display: inline-block;
+}
+
+time.post-date
+{
+    display: inline-block;
+}
+
+footer
+{
+    padding: 5px;
+    background: rgb(147,0,93);
+    background: linear-gradient(133deg, rgba(147,0,93,1) 0%, rgba(33,97,142,1) 100%);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $small-font-size;
+    font-weight: 400;
+}
+
+footer img
+{
+    display: block;
+}
