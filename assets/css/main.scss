@@ -14,6 +14,8 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+$width-desktop:     768px;
+
 body
 {
     margin: 0px;
@@ -38,28 +40,151 @@ header.top
     background: rgb(147,0,93);
     background: linear-gradient(133deg, rgba(147,0,93,1) 0%, rgba(33,97,142,1) 100%);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+
+    div.title
+    {
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+        text-align: center;
+
+        h1
+        {
+            margin: 0;
+            font-size: 28px;
+        }
+    }
+
+    /* Navigation menu */
+    nav.menu
+    {
+        ul
+        {
+            list-style: none;
+        }
+
+        /* Unordered lists which are siblings of unchecked menu-open:
+           invisible */
+        input.menu-open ~ ul
+        {
+            display: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Unordered lists which are siblings of checked menu-open:
+           visible */
+        input.menu-open:checked ~ ul
+        {
+            display: block;
+        }
+
+        /* Render & animate the 3 menu lines */
+        input.menu-open ~ label.menu-open-button
+        {
+            position: relative;
+            display: block;
+            height: 14px;
+            width: 14px;
+            float: right;
+
+            /* H1 font size: 28px; line height: 1.5 = 42px
+               Half of that = 21px, plus half the label height: 28px */
+            margin-top: -28px;
+
+            span
+            {
+                width: 14px;
+                height: 2px;
+                margin-left: -7px;
+                margin-top: -1px;
+                background: white;
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transition: transform 200ms;
+                z-index: 2;
+            }
+
+            /* So that we don't get a shadow over the middle of the cross,
+               instead of putting shadow directly on the white bars, we have
+               a second layer of transparent bars with shadow, all set to
+               beneath the white bars. */
+            span.shadow
+            {
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+                background: none;
+                z-index: 1;
+            }
+
+            span.burger-1
+            {
+                transform: translateY(-4px);
+            }
+
+            span.burger-3
+            {
+                transform: translateY(+4px);
+            }
+        }
+
+        input.menu-open:checked ~ label.menu-open-button
+        {
+            span.burger-1
+            {
+                transform: translateY(0) rotate(45deg);
+            }
+
+            span.burger-2
+            {
+                transform: scale(0.1, 0.1);
+            }
+
+            span.burger-3
+            {
+                transform: translateY(0) rotate(-45deg);
+            }
+        }
+
+        /* Underlying check-box itself is invisible */
+        input.menu-open
+        {
+            display: none;
+        }
+    }
+
+    /* Hide whole menu in print & on desktop devices */
+    @media only screen and (min-width: $width-desktop)
+    {
+        nav.menu
+        {
+            display: none;
+        }
+    }
+
+    @media print
+    {
+        nav.menu
+        {
+            display: none;
+        }
+    }
 }
 
-header.top img
-{
-    display: block;
-}
-
-header.top div.title
-{
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 1.2em;
-    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-    text-align: center;
-}
-
-@media only screen and (min-width: 768px)
+@media only screen and (min-width: $width-desktop)
 {
     header.top div.title
     {
         font-size: 1.5em;
+
+        /* Reset H1 font size & margin explicitly back to CSS defaults */
+        h1 {
+            font-size: 2em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+        }
     }
 }
 
@@ -69,21 +194,21 @@ main
 
     /* Mysterious hax to make footer stick to bottom */
     flex: 1 0 auto;
-}
 
-main h1
-{
-    margin-top: 0;
-}
+    h1
+    {
+        margin-top: 0;
+    }
 
-main a:link
-{
-    color: #bad1a1;
-}
+    a:link
+    {
+        color: #bad1a1;
+    }
 
-main a:visited
-{
-    color: #98b080;
+    a:visited
+    {
+        color: #98b080;
+    }
 }
 
 div.home, article
@@ -122,8 +247,8 @@ time.post-date
 footer
 {
     padding: 5px;
-    background: rgb(147,0,93);
-    background: linear-gradient(133deg, rgba(147,0,93,1) 0%, rgba(33,97,142,1) 100%);
+    background: rgb(33,97,142);
+    background: linear-gradient(133deg, rgba(33,97,142,1) 0%, rgba(147,0,93,1) 100%);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: row;
@@ -136,4 +261,25 @@ footer
 footer img
 {
     display: block;
+}
+
+/* Print footer on every page */
+@media print
+{
+    footer
+    {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+
+        div.copyright
+        {
+            padding-right: 2em;
+        }
+
+        img
+        {
+            padding-left: 2em;
+        }
+    }
 }
