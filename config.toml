@@ -1,7 +1,7 @@
 baseURL = "https://www.depthbuffer.uk/"
 languageCode = "en-GB"
 title = "Depthbuffer"
-disableKinds = ["taxonomy", "taxonomyTerm", "category", "sitemap", "RSS", "section"]
+disableKinds = ["taxonomy", "taxonomyTerm", "category", "sitemap", "RSS"]
 
 [markup]
     [markup.highlight]
