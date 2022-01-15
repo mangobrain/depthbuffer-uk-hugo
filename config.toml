@@ -2,6 +2,7 @@ baseURL = "https://www.depthbuffer.uk/"
 languageCode = "en-GB"
 title = "Depthbuffer"
 disableKinds = ["taxonomy", "taxonomyTerm", "category", "sitemap", "RSS"]
+summaryLength = "40"
 
 [markup]
     [markup.highlight]
