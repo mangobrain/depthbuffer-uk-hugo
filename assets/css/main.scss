@@ -35,6 +35,10 @@ body
     flex-direction: column;
 }
 
+/**********/
+/* Header */
+/**********/
+
 header.top
 {
     padding: 5px;
@@ -57,7 +61,10 @@ header.top
         }
     }
 
-    /* Navigation menu */
+    /***********************************************/
+    /* Navigation menu - only visible on low width */
+    /***********************************************/
+
     nav.menu
     {
         ul
@@ -192,6 +199,10 @@ header.top
     }
 }
 
+/*************************/
+/* Misc whole-page stuff */
+/*************************/
+
 main
 {
     padding: 2% 4%;
@@ -215,7 +226,10 @@ a:visited
     color: #98b080;
 }
 
+/********************************************/
 /* Navigation menu: only visible on desktop */
+/********************************************/
+
 div.main-container div.menu
 {
     display: none;
@@ -269,6 +283,10 @@ div.main-container div.menu
     }
 }
 
+/***********************************************************************/
+/* Common style across single-page article & home page listing element */
+/***********************************************************************/
+
 div.home, article, div.main-container div.menu div
 {
     background-color: $grey-color-dark;
@@ -291,6 +309,10 @@ div.home p, article p
     margin: 0.5em 0 0;
 }
 
+/******************************************/
+/* Main single-page article content style */
+/******************************************/
+
 @media print
 {
     article
@@ -306,6 +328,21 @@ div.home p, article p
         text-shadow: none;
     }
 }
+
+article header
+{
+    display: flex;
+    flex-direction: row;
+
+    h1
+    {
+        flex: 1;
+    }
+}
+
+/******************************/
+/* Post listing on front page */
+/******************************/
 
 div.post-list-item
 {
@@ -324,6 +361,10 @@ time.post-date
 {
     display: inline-block;
 }
+
+/**********/
+/* Footer */
+/**********/
 
 footer
 {
