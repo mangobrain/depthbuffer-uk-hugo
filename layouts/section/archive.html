@@ -5,7 +5,7 @@
             <div class="archive-year">
                 <h1>{{ .Key }}</h1>
                 <ul>
-                    {{ range .Pages }}
+                    {{ range .Pages.ByDate.Reverse }}
                         <li>
                             <div class="post-list-item">
                                 <div class="post-title">

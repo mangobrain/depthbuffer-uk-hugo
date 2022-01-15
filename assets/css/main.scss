@@ -14,7 +14,8 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$width-desktop:     768px;
+$width-desktop:    769px;
+$width-wide:       1401px;
 
 body
 {
@@ -280,14 +281,20 @@ div.main-container div.menu
                 font-size: 0.6em;
             }
         }
+
+        > :last-child
+        {
+            margin-bottom: 0;
+        }
     }
 }
 
 /***********************************************************************/
-/* Common style across single-page article & home page listing element */
+/* Common style across single-page article, archive, and home page     */
+/* listing elements                                                    */
 /***********************************************************************/
 
-div.home, article, div.main-container div.menu div
+div.postlist-item, div.archive-year, article.single, div.main-container div.menu div
 {
     background-color: $grey-color-dark;
     border-radius: 10px;
@@ -296,36 +303,17 @@ div.home, article, div.main-container div.menu div
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     overflow: auto;
-    flex: 1;
 }
 
-div.home h1, article h1
+div.postlist-item, div.archive-year, article.single
 {
-    text-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
-}
-
-div.home p, article p
-{
-    margin: 0.5em 0 0;
-}
-
-/******************************************/
-/* Main single-page article content style */
-/******************************************/
-
-@media print
-{
-    article
+    h1
     {
-        background: none;
-        padding: 0%;
-        border: none;
-        box-shadow: none;
-        text-shadow: none;
+        text-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
     }
-    article h1
+    p
     {
-        text-shadow: none;
+        margin: 0.5em 0 0;
     }
 }
 
@@ -340,26 +328,138 @@ article header
     }
 }
 
-/******************************/
-/* Post listing on front page */
-/******************************/
-
-div.post-list-item
+@media print
 {
-    display: inline-flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
+    div.postlist-item, div.postlist-item h1
+    {
+        text-shadow: none;
+    }
+    article h1
+    {
+        text-shadow: none;
+    }
 }
 
-div.post-title
+/******************************************/
+/* Main single-page article content style */
+/******************************************/
+
+@media print
 {
-    display: inline-block;
+    article.single
+    {
+        background: none;
+        padding: 0%;
+        border: none;
+        box-shadow: none;
+        text-shadow: none;
+    }
 }
 
-time.post-date
+/*****************************/
+/* Post listing on root page */
+/*****************************/
+
+div.postlist-container
 {
-    display: inline-block;
+    /* Take up slack width within parent flex container */
+    flex: 1;
+
+    /* Lay out contained items in a column */
+    display: flex;
+    flex-direction: column;
+
+    > :last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+div.postlist-item
+{
+    margin-bottom: 15px;
+
+    h1
+    {
+        margin-bottom: 0.2em;
+    }
+}
+
+@media only screen and (min-width: $width-wide)
+{
+    /* Switch from single column to three columns when really wide */
+    div.postlist-container
+    {
+        flex-direction: unset;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        div.postlist-item
+        {
+            margin-right: 0;
+            max-width: 28%;
+        }
+    }
+}
+
+/********************************/
+/* Post listing on archive page */
+/********************************/
+
+div.archive
+{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    > :last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+div.archive-year
+{
+    margin-bottom: 15px;
+
+    h1, ul
+    {
+        margin: 0;
+    }
+
+    div.post-list-item
+    {
+        display: inline-flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    div.post-title
+    {
+        display: inline-block;
+    }
+
+    time.post-date
+    {
+        display: inline-block;
+    }
+}
+
+@media print
+{
+    div.archive-year
+    {
+        background: none;
+        padding: 0%;
+        border: none;
+        box-shadow: none;
+        text-shadow: none;
+
+        h1
+        {
+            text-shadow: none;
+        }
+    }
 }
 
 /**********/
@@ -378,6 +478,7 @@ footer
     justify-content: space-between;
     font-size: $small-font-size;
     font-weight: 200;
+    margin-top: 1em;
 }
 
 footer img
@@ -385,14 +486,11 @@ footer img
     display: block;
 }
 
-/* Print footer on every page */
 @media print
 {
     footer
     {
         font-weight: 400;
-        position: fixed;
-        bottom: 0;
         width: 100%;
 
         div.copyright

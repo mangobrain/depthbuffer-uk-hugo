@@ -4,39 +4,26 @@
          - Medium: single column, right menu
          - Large: three columns, right menu -->
     <div class="main-container">
-        <div class="home">
-            <h1 class="page-heading">Blog</h1>
-            <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus venenatis nulla eu interdum bibendum. Cras varius vehicula lorem eu porta. Pellentesque id auctor magna. Donec non lacinia risus, at consectetur est. Praesent placerat ac justo vitae ullamcorper. Morbi ultrices aliquet congue. Vivamus in orci elit. Sed molestie consectetur arcu. Duis semper nec velit nec laoreet. Quisque vulputate porta semper. In vitae tincidunt nibh. Nulla quis neque porta, gravida urna eget, auctor augue. Suspendisse sapien arcu, tincidunt eu rhoncus in, condimentum vel mauris.
-</p>
-<p>
-In tempor nulla eget augue congue, et accumsan orci rhoncus. Phasellus ac maximus lacus. Nam elementum mi orci, vitae consectetur lectus porta eget. Aenean commodo rutrum erat, eu consectetur velit bibendum vel. Proin bibendum orci eget eros bibendum, nec suscipit lacus dapibus. In tristique leo vitae sapien semper, eu scelerisque ante rhoncus. Donec fermentum mattis mi, ac feugiat urna lobortis sit amet. Nullam tempor, lorem quis gravida maximus, felis nisl consectetur elit, ac aliquet turpis nunc quis nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id molestie quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed egestas convallis leo in condimentum. Aliquam cursus sapien quis ipsum lacinia, porta dictum ligula rhoncus. Phasellus dolor felis, laoreet at commodo at, tempus vel tortor.
-</p>
-<p>
-Donec rutrum lectus orci, sed consectetur nulla laoreet et. Nullam sed mauris a augue fermentum eleifend et ac magna. Nulla facilisi. Nullam aliquam iaculis lectus eget convallis. Integer nec neque a felis consequat lacinia sed a dolor. Duis blandit urna non ante aliquam faucibus. Nullam sit amet lacus ipsum. Sed facilisis eu felis et aliquet. Nunc ac lectus eu urna ornare luctus quis ut justo. Duis hendrerit orci in nisl suscipit porttitor. Aenean nec neque massa. In erat urna, lacinia sit amet interdum non, facilisis sit amet nisi. Maecenas tempus, lorem id bibendum tincidunt, massa mauris dignissim tellus, in consequat magna dolor eu dui.
-</p>
-<p>
-Vivamus quis faucibus massa. Sed mattis sagittis tellus sit amet imperdiet. Duis hendrerit varius dolor non auctor. Maecenas at iaculis nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus iaculis, dui feugiat lacinia sagittis, orci nibh pulvinar nibh, a malesuada odio eros sed felis. Nam at accumsan odio, vitae cursus nunc. Nulla semper sagittis arcu non congue. Sed pretium felis pulvinar, vestibulum tellus sed, ullamcorper tellus. Vestibulum egestas faucibus commodo. Vivamus sit amet viverra elit. Vestibulum ut porttitor nulla. Suspendisse vel sem molestie elit cursus rutrum. Donec lacinia vel turpis faucibus ornare.
-</p>
-<p>
-Vivamus nibh augue, pellentesque a elit ac, luctus ullamcorper diam. Proin a eleifend neque, quis dapibus mi. Donec id augue venenatis turpis euismod scelerisque ut vel felis. Pellentesque rutrum odio libero, mattis faucibus risus scelerisque quis. Proin nec interdum urna. Suspendisse vitae sapien id nisl elementum suscipit pretium a nibh. Maecenas et nulla nisl. Vivamus viverra risus ac libero aliquet posuere. Nam diam dolor, pretium at urna ac, dictum tempor leo. Vestibulum suscipit erat libero, at hendrerit orci bibendum vel. Mauris eu tellus nec urna semper vestibulum a ac purus. Vivamus sed felis mi. Nullam gravida nec sem gravida porta. Praesent ligula lectus, volutpat eu porta ac, gravida vel sem. Maecenas a dui et tortor auctor euismod sed eget ex.
-</p>
-{{/* TODO: Adapt this as the basis for the archive page, and have a more suitable "post grid" for home page
-            <ul class="post-list">
-                {{ $pag := .Paginate (where site.RegularPages "Type" "in" "posts") }}
-                {{ range $pag.Pages }}
-                    <li>
-                        <div class="post-list-item">
-                            <div class="post-title">
-                                <a href="{{ .Permalink }}">{{ .Title }}</a>
-                            </div>
-                            <time class="post-date">{{ .Date.Format "2006-01-02" }}</time>
-                        </div>
-                    </li>
-                {{ end }}
-                <!-- TODO: Figure out how to handle additional pages -->
-            </ul>
-*/}}
+        <div class="postlist-container">
+            {{ $pag := .Paginate (where site.RegularPages "Type" "in" "posts") }}
+            {{ range $pag.Pages }}
+            <div class="postlist-item" href="#">
+                <article itemscope itemtype="http://schema.org/BlogPosting" class="postlist-item">
+                    <header>
+                        <h1 itemprop="name headline">{{ .Title }}</h1>
+                        <p class="post-header">
+                            {{ $date := .Date.Format "2006-01-02" }}
+                            <time datetime="{{ $date }}" itemprop="datePublished">
+                                {{ $date }}
+                            </time>
+                        </p>
+                    </header>
+                    {{ .Summary }}
+                    {{ if .Truncated }}&hellip;{{ end }}
+                </article>
+            </div>
+            {{ end }}
+            <!-- TODO: Figure out how to handle additional pages -->
         </div>
 {{ partial "menu" }}
     </div>
