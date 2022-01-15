@@ -215,7 +215,61 @@ a:visited
     color: #98b080;
 }
 
-div.home, article
+/* Navigation menu: only visible on desktop */
+div.main-container div.menu
+{
+    display: none;
+}
+@media only screen and (min-width: $width-desktop)
+{
+    div.main-container
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    div.main-container div.menu
+    {
+        /* The menu column's width within container is fixed at 300px */
+        flex: 0 0 300px;
+
+        /* The elements inside the menu stack as a flex column */
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: 1.15em;
+
+        div
+        {
+            margin-bottom: 10px;
+            text-align: center;
+            /* Absolute padding so we know how wide to make Twitter embed */
+            padding: 6px;
+            /* Little 32x32 images inside menu boxes */
+            img
+            {
+                float: left;
+                /* Line up top with first line of text (1.15em / 2) */
+                margin-top: 0.575em;
+                /* Move away from edge, but don't push text to the right */
+                margin-left: 10px;
+                margin-right: -42px;
+            }
+            a
+            {
+                text-decoration: none;
+            }
+            small
+            {
+                font-size: 0.6em;
+            }
+        }
+    }
+}
+
+div.home, article, div.main-container div.menu div
 {
     background-color: $grey-color-dark;
     border-radius: 10px;
@@ -224,6 +278,7 @@ div.home, article
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     overflow: auto;
+    flex: 1;
 }
 
 div.home h1, article h1

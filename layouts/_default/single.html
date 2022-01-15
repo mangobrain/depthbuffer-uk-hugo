@@ -1,17 +1,20 @@
 {{ define "title" }}{{ .Site.Title }} - {{ .Title }}{{ end }}
 {{ define "main" }}
-    <article itemscope itemtype="http://schema.org/BlogPosting">
-        <header>
-            <h1 itemprop="name headline">{{ .Title }}</h1>
-            <p class="post-header">
-                {{ $date := .Date.Format "2006-01-02" }}
-                <time datetime="{{ $date }}" itemprop="datePublished">
-                    {{ $date }}
-                </time>
-            </p>
-        </header>
-        {{ .Content }}
-    </article>
+    <div class="main-container">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+                <h1 itemprop="name headline">{{ .Title }}</h1>
+                <p class="post-header">
+                    {{ $date := .Date.Format "2006-01-02" }}
+                    <time datetime="{{ $date }}" itemprop="datePublished">
+                        {{ $date }}
+                    </time>
+                </p>
+            </header>
+            {{ .Content }}
+        </article>
+        {{ partial "menu" }}
+    </div>
 {{/*
     {{ if .Params.comments }}
         <div id="disqus_thread"></div>
