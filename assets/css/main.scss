@@ -84,6 +84,7 @@ header.top
         /* Render & animate the 3 menu lines */
         input.menu-open ~ label.menu-open-button
         {
+            cursor: pointer;
             position: relative;
             display: block;
             height: 14px;
@@ -180,11 +181,12 @@ header.top
     {
         font-size: 1.5em;
 
-        /* Reset H1 font size & margin explicitly back to CSS defaults */
+        /* Reset H1 font size explicitly back to CSS default; margin slightly
+           smaller than the default */
         h1 {
             font-size: 2em;
-            margin-top: 0.67em;
-            margin-bottom: 0.67em;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
         }
     }
 }
@@ -220,6 +222,7 @@ div.home, article
     padding: 2%;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    overflow: auto;
 }
 
 div.home h1, article h1
