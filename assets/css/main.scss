@@ -320,7 +320,7 @@ div.postlist-item, div.archive-year, article.single
 
 article.single, article.section
 {
-    p:last-child
+    :last-child
     {
         margin-bottom: 0;
     }
