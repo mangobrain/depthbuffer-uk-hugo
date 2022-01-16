@@ -394,6 +394,16 @@ div.postlist-item.video, article.single.video
 /* Main single-page article content style */
 /******************************************/
 
+article.single
+{
+    flex: 1;
+
+    h1:first-of-type
+    {
+        margin-bottom: 0;
+    }
+}
+
 @media print
 {
     article.single
