@@ -502,10 +502,20 @@ div.postlist-paginator
     font-weight: bold;
     font-size: 1.1em;
     text-shadow: 0px 2px 5px rgba(33, 66, 33, 1);
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
 
     a
     {
         text-decoration: none;
+    }
+
+    div.prev {
+        margin-right: 1em;
+    }
+    div.next {
+        margin-left: 1em;
     }
 
     div.current {
