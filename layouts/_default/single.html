@@ -1,7 +1,11 @@
 {{ define "title" }}{{ .Site.Title }} - {{ .Title }}{{ end }}
 {{ define "main" }}
     <div class="main-container">
-        <article itemscope itemtype="http://schema.org/BlogPosting" class="single">
+        {{ $icon := index .Params "icon" | default "article" -}}
+        {{- if not (fileExists (printf "static/post-icons/%s.svg" $icon)) -}}
+            {{- $icon := "article" -}}
+        {{- end }}
+        <article itemscope itemtype="http://schema.org/BlogPosting" class="single {{ $icon }}">
             <header>
                 <h1 itemprop="name headline">{{ .Title }}</h1>
                 <p class="post-header">

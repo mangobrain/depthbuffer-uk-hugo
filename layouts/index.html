@@ -5,22 +5,28 @@
          - Large: three columns, right menu -->
     <div class="main-container">
         <div class="postlist-container">
-            {{ $pag := .Paginate (where site.RegularPages "Type" "in" "posts") }}
-            {{ range $pag.Pages }}
-            <div class="postlist-item" href="#">
-                <article itemscope itemtype="http://schema.org/BlogPosting" class="postlist-item">
-                    <header>
-                        <h1 itemprop="name headline">{{ .Title }}</h1>
-                        <p class="post-header">
-                            {{ $date := .Date.Format "2006-01-02" }}
-                            <time datetime="{{ $date }}" itemprop="datePublished">
-                                {{ $date }}
-                            </time>
-                        </p>
-                    </header>
-                    {{ .Summary }}
-                    {{ if .Truncated }}&hellip;{{ end }}
-                </article>
+            {{ $pag := .Paginate (where site.RegularPages "Type" "in" "posts") -}}
+            {{- range $pag.Pages -}}
+            {{- $icon := index .Params "icon" | default "article" -}}
+            {{- if not (fileExists (printf "static/post-icons/%s.svg" $icon)) -}}
+                {{- $icon := "article" -}}
+            {{- end }}
+            <div class="postlist-item {{ $icon }}">
+                <a href="{{ .Permalink }}">
+                    <article itemscope itemtype="http://schema.org/BlogPosting" class="postlist-item">
+                        <header>
+                            <h1 itemprop="name headline">{{ .Title }}</h1>
+                            <p class="post-header">
+                                {{ $date := .Date.Format "2006-01-02" }}
+                                <time datetime="{{ $date }}" itemprop="datePublished">
+                                    {{ $date }}
+                                </time>
+                            </p>
+                        </header>
+                        {{ .Summary }}
+                        {{ if .Truncated }}&hellip;{{ end }}
+                    </article>
+                </a>
             </div>
             {{ end }}
             <!-- TODO: Figure out how to handle additional pages -->

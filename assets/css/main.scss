@@ -258,6 +258,7 @@ div.main-container div.menu
 
         div
         {
+            background: $grey-color-dark;
             margin-bottom: 10px;
             text-align: center;
             /* Absolute padding so we know how wide to make Twitter embed */
@@ -296,7 +297,6 @@ div.main-container div.menu
 
 div.postlist-item, div.archive-year, article.single, div.main-container div.menu div
 {
-    background-color: $grey-color-dark;
     border-radius: 10px;
     display: block;
     padding: 2%;
@@ -338,6 +338,56 @@ article header
     {
         text-shadow: none;
     }
+}
+
+/*************************/
+/* Post icon backgrounds */
+/*************************/
+
+div.postlist-item, article.single
+{
+    /* Default post icon: article */
+    /* Browser fall-back: gradient + image + grey -> image + grey -> grey */
+    background: $grey-color-dark;
+    background: url('/post-icons/article.svg'), $grey-color-dark;
+    background: linear-gradient(to bottom, #555, rgba(130, 130, 130, 0) 48px), url('/post-icons/article.svg'), $grey-color-dark;
+    background-repeat: no-repeat;
+}
+
+div.postlist-item.alert, article.single.alert
+{
+    background: $grey-color-dark;
+    background: url('/post-icons/alert.svg'), $grey-color-dark;
+    background: linear-gradient(to bottom, #555, rgba(130, 130, 130, 0) 48px), url('/post-icons/alert.svg'), $grey-color-dark;
+    background-repeat: no-repeat;
+}
+div.postlist-item.art, article.single.art
+{
+    background: $grey-color-dark;
+    background: url('/post-icons/art.svg'), $grey-color-dark;
+    background: linear-gradient(to bottom, #555, rgba(130, 130, 130, 0) 48px), url('/post-icons/art.svg'), $grey-color-dark;
+    background-repeat: no-repeat;
+}
+div.postlist-item.event, article.single.event
+{
+    background: $grey-color-dark;
+    background: url('/post-icons/event.svg'), $grey-color-dark;
+    background: linear-gradient(to bottom, #555, rgba(130, 130, 130, 0) 48px), url('/post-icons/event.svg'), $grey-color-dark;
+    background-repeat: no-repeat;
+}
+div.postlist-item.music, article.single.music
+{
+    background: $grey-color-dark;
+    background: url('/post-icons/music.svg'), $grey-color-dark;
+    background: linear-gradient(to bottom, #555, rgba(130, 130, 130, 0) 48px), url('/post-icons/music.svg'), $grey-color-dark;
+    background-repeat: no-repeat;
+}
+div.postlist-item.video, article.single.video
+{
+    background: $grey-color-dark;
+    background: url('/post-icons/video.svg'), $grey-color-dark;
+    background: linear-gradient(to bottom, #555, rgba(130, 130, 130, 0) 48px), url('/post-icons/video.svg'), $grey-color-dark;
+    background-repeat: no-repeat;
 }
 
 /******************************************/
@@ -383,6 +433,22 @@ div.postlist-item
     {
         margin-bottom: 0.2em;
     }
+
+    > a
+    {
+        text-decoration: none;
+        color: $text-color;
+    }
+
+    > a:link h1
+    {
+        color: lighten(rgb(232, 149, 217), 15%);
+    }
+
+    > a:visited h1
+    {
+        color: darken(rgb(232, 149, 217), 15%);
+    }
 }
 
 @media only screen and (min-width: $width-wide)
@@ -419,6 +485,7 @@ div.archive
 
 div.archive-year
 {
+    background: $grey-color-dark;
     margin-bottom: 15px;
 
     h1, ul
