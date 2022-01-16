@@ -4,32 +4,80 @@
          - Medium: single column, right menu
          - Large: three columns, right menu -->
     <div class="main-container">
-        <div class="postlist-container">
-            {{ $pag := .Paginate (where site.RegularPages "Type" "in" "posts") -}}
-            {{- range $pag.Pages -}}
-            {{- $icon := index .Params "icon" | default "article" -}}
-            {{- if not (fileExists (printf "static/post-icons/%s.svg" $icon)) -}}
-                {{- $icon := "article" -}}
-            {{- end }}
-            <div class="postlist-item {{ $icon }}">
-                <a href="{{ .Permalink }}">
-                    <article itemscope itemtype="http://schema.org/BlogPosting" class="postlist-item">
-                        <header>
-                            <h1 itemprop="name headline">{{ .Title }}</h1>
-                            <p class="post-header">
-                                {{ $date := .Date.Format "2006-01-02" }}
-                                <time datetime="{{ $date }}" itemprop="datePublished">
-                                    {{ $date }}
-                                </time>
-                            </p>
-                        </header>
-                        {{ .Summary }}
-                        {{ if .Truncated }}&hellip;{{ end }}
-                    </article>
-                </a>
+        <div class="postlist-paginator-wrap">
+            <div class="postlist-container">
+                {{ $pag := .Paginate (where site.RegularPages "Type" "in" "posts") -}}
+                {{- range $pag.Pages -}}
+                {{- $icon := index .Params "icon" | default "article" -}}
+                {{- if not (fileExists (printf "static/post-icons/%s.svg" $icon)) -}}
+                    {{- $icon = "article" -}}
+                {{- end }}
+                <div class="postlist-item {{ $icon }}">
+                    <a href="{{ .Permalink }}">
+                        <article itemscope itemtype="http://schema.org/BlogPosting" class="postlist-item">
+                            <header>
+                                <h1 itemprop="name headline">{{ .Title }}</h1>
+                                <p class="post-header">
+                                    {{ $date := .Date.Format "2006-01-02" }}
+                                    <time datetime="{{ $date }}" itemprop="datePublished">
+                                        {{ $date }}
+                                    </time>
+                                </p>
+                            </header>
+                            {{ .Summary }}
+                            {{ if .Truncated }}
+                                &hellip;
+                                <p class="postlist-link">Read more</p>
+                            {{ else }}
+                                <p class="postlist-link">Permalink</p>
+                            {{ end }}
+                        </article>
+                    </a>
+                </div>
+                {{ end }}
             </div>
-            {{ end }}
-            <!-- TODO: Figure out how to handle additional pages -->
+            <div class="postlist-paginator">
+                <div class="prev">
+                    {{- if $pag.HasPrev }}
+                    <a href="{{ $pag.First.URL }}">&#8606;</a>
+                    <a href="{{ $pag.Prev.URL }}">&larr;</a>
+                    {{- else }}
+                    &#8606;
+                    &larr;
+                    {{- end }}
+                </div>
+                {{- $doneLeftEllip := false -}}
+                {{- $doneRightEllip := false -}}
+                {{- range $pag.Pagers -}}
+                    {{- $distance := sub $pag.PageNumber .PageNumber -}}
+                    {{- if gt .PageNumber $pag.PageNumber -}}
+                        {{- $distance = sub .PageNumber $pag.PageNumber -}}
+                        {{- if and (not $doneLeftEllip) (gt $distance 3) -}}
+                            {{- $doneLeftEllip = true }}
+                            &hellip;
+                        {{- end -}}
+                    {{- else -}}
+                        {{- if and (not $doneRightEllip) (gt $distance 3) -}}
+                            {{- $doneRightEllip = true }}
+                            &hellip;
+                        {{- end -}}
+                    {{- end -}}
+                    {{- if eq $distance 0 }}
+                        <div class="current">{{ .PageNumber }}</div>
+                    {{- else if le $distance 3 }}
+                        <div><a href="{{ .URL }}.">{{ .PageNumber }}</a></div>
+                    {{- end -}}
+                {{- end }}
+                <div class="next">
+                    {{- if $pag.HasNext }}
+                    <a href="{{ $pag.Next.URL }}">&rarr;</a>
+                    <a href="{{ $pag.Last.URL }}">&#8608;</a>
+                    {{- else }}
+                    &rarr;
+                    &#8608;
+                    {{- end }}
+                </div>
+            </div>
         </div>
 {{ partial "menu" }}
     </div>

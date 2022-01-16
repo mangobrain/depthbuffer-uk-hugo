@@ -418,11 +418,6 @@ div.postlist-container
     /* Lay out contained items in a column */
     display: flex;
     flex-direction: column;
-
-    > :last-child
-    {
-        margin-bottom: 0;
-    }
 }
 
 div.postlist-item
@@ -440,14 +435,29 @@ div.postlist-item
         color: $text-color;
     }
 
-    > a:link h1
+    > a:link h1, > a:link p.postlist-link
     {
         color: lighten(rgb(232, 149, 217), 15%);
     }
 
-    > a:visited h1
+    > a:visited h1, > a:link time
     {
         color: darken(rgb(232, 149, 217), 15%);
+    }
+
+    > a:visited h1, > a:visited p.postlist-link, > a:visited time
+    {
+        color: #aaa;
+    }
+
+    p.postlist-link
+    {
+        margin: 0;
+        text-align: right;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: small;
+        font-style: italic;
     }
 }
 
@@ -465,6 +475,41 @@ div.postlist-item
             margin-right: 0;
             max-width: 28%;
         }
+    }
+}
+
+/************************************/
+/* Post listing homepage pagination */
+/************************************/
+
+/* Element in left column wrapping post list container & paginator */
+div.postlist-paginator-wrap
+{
+    /* Take up slack width within parent flex container */
+    flex: 1;
+
+    /* Lay out contained items in a column */
+    display: flex;
+    flex-direction: column;
+}
+
+div.postlist-paginator
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: $grey-color;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow: 0px 2px 5px rgba(33, 66, 33, 1);
+
+    a
+    {
+        text-decoration: none;
+    }
+
+    div.current {
+        color: $text-color;
     }
 }
 
