@@ -4,8 +4,8 @@
         {{ partial "head.html" . }}
         <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
         <style>
-{{ block "extraStyle" . }}
-{{ end }}
+{{- block "extraStyle" . }}
+{{- end -}}
         </style>
     </head>
     <body>
