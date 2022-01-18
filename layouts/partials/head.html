@@ -7,8 +7,6 @@
         <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
         <link rel="stylesheet" type="text/css" href="/css/syntax.css">
 {{- if eq .Type "posts" }}
-        <meta name="twitter:card" content="summary">
+        {{ template "_internal/twitter_cards.html" . }}
         <meta name="twitter:site" content="@DepthbufferM">
-        <meta name="twitter:title" content="{{ .Title }}">
-        <meta name="twitter:description" content="{{ .Summary }}">
 {{- end -}}
