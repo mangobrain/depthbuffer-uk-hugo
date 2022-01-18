@@ -412,8 +412,16 @@ article.single
         margin-bottom: 0;
     }
 
+    img
+    {
+        max-width: 100%;
+        margin: auto;
+        display: block;
+    }
+
     img.post-thumbnail
     {
+        display: inline-block;
         float: left;
         max-width: 33%;
         margin: 10px;
