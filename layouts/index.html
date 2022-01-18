@@ -15,6 +15,9 @@
                 <div class="postlist-item {{ $icon }}">
                     <a href="{{ .Permalink }}">
                         <article itemscope itemtype="http://schema.org/BlogPosting" class="postlist-item">
+                            {{- if isset .Params "images" }}
+                            <img alt="Article thumbnail" src="{{ index .Params.images 0 }}" class="post-thumbnail">
+                            {{- end -}}
                             <header>
                                 <h1 itemprop="name headline">{{ .Title }}</h1>
                                 <p class="post-header">

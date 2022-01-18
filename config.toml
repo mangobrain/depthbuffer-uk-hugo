@@ -7,3 +7,9 @@ summaryLength = "40"
 [markup]
     [markup.highlight]
         noClasses = false
+
+[privacy]
+    [privacy.twitter]
+        enableDNT = true
+    [privacy.youtube]
+        privacyEnhanced = true

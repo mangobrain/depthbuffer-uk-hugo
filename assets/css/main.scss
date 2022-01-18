@@ -411,6 +411,23 @@ article.single
     {
         margin-bottom: 0;
     }
+
+    img.post-thumbnail
+    {
+        float: left;
+        max-width: 33%;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    @media only screen and (min-width: $width-desktop)
+    {
+        img.post-thumbnail
+        {
+            max-width: 100%;
+        }
+    }
 }
 
 @media print
@@ -477,6 +494,26 @@ div.postlist-item
         font-weight: 900;
         font-size: small;
         font-style: italic;
+    }
+
+    img.post-thumbnail
+    {
+        float: left;
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    @media only screen and (min-width: $width-desktop)
+    {
+        img.post-thumbnail
+        {
+            margin-right: 15px;
+            width: 75px;
+            height: 75px;
+        }
     }
 }
 
