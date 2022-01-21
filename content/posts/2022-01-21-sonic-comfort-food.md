@@ -33,7 +33,7 @@ Little AlterBoy (pictured in their article), and the similar Waves Vocal
 Bender, which I use because I got it at a steep discount & it does the job.
 
 For Stardust, I took the pitch up an octave, the formants _down_ three
-semi-tones (I was going for "dusky", not Spaceman sped-up), and blended it
+semitones (I was going for "dusky", not Spaceman sped-up), and blended it
 back in with the dry vocal at around 30%, increased to 50% during the two
 "chorus" sections. If they can really be called that.
 
