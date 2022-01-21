@@ -54,8 +54,8 @@ I didn't use this one here, but I've used similar tricks in the past, in
 particular taking sounds with nice long tails - gongs, crash cymbals, etc. -
 and reversing them, then playing that during the build-up to the "real" hit
 at the start of the next bar. [Soundtrackers](https://youtu.be/roBkg-iPrbw) are
-at heart just fancy samples, and Renoise is at heart just a fancy soundtracker,
-so that kind of sample manipulation is trivial.
+at heart just fancy samplers, and Renoise is at heart just a fancy
+soundtracker, so that kind of sample manipulation is trivial.
 
 # Vocoding
 
