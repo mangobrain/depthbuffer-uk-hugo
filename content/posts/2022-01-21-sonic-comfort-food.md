@@ -89,7 +89,7 @@ on the group itself.
 # Master FX
 
 Yep. For the "fade in" at the start of the track, I used two things on the
-master bus: a simple notch filter with a descending cut-off frequency, and
+master bus: a simple bandpass filter with a descending corner frequency, and
 AudioThing's [Wires](https://www.audiothing.net/effects/wires/), which provides
 further gritty degradation, as well as the tape start effect right at the very
 beginning, courtesy of automating flipping the playback start/stop switch in
