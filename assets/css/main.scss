@@ -295,6 +295,11 @@ div.main-container div.menu
 /* listing elements                                                    */
 /***********************************************************************/
 
+p.post-header time
+{
+    margin-left: 8px;
+}
+
 div.postlist-item, div.archive-year, article.single, article.section, div.main-container div.menu div
 {
     border-radius: 10px;
@@ -310,6 +315,7 @@ div.postlist-item, div.archive-year, article.single
 {
     h1
     {
+        text-align: left;
         text-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
     }
     p
@@ -333,6 +339,7 @@ article header
 
     h1
     {
+        text-align: left;
         flex: 1;
     }
 }
