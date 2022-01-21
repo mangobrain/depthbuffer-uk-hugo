@@ -11,7 +11,7 @@ As per the liner notes, this is an unapologetically cheesy track. It does not
 pretend to break any musical ground, but instead basks in the clichés of
 mid-90s mainstream dance, aiming to evoke memories of
 [one-hit](https://youtu.be/s4oZdUV-G-Y) [wonders](https://youtu.be/qmsbP13xu6k)
-from the [era](https://youtu.be/XCbAEkfXSDE)[^1] and infuse them with a bit of
+from the [era](https://youtu.be/XCbAEkfXSDE) and infuse them with a bit of
 TB-303 goodness.
 
 (Aside: does Bablyon Zoo's Spaceman count as a troll track? I always remember
