@@ -13,3 +13,6 @@ summaryLength = "40"
         enableDNT = true
     [privacy.youtube]
         privacyEnhanced = true
+
+[social]
+    twitter = "DepthbufferM"
