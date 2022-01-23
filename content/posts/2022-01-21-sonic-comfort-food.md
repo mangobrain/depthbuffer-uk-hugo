@@ -37,7 +37,7 @@ semitones (I was going for "dusky", not Spaceman sped-up), and blended it
 back in with the dry vocal at around 30%, increased to 50% during the two
 "chorus" sections. If they can really be called that.
 
-![Pitch and formant shifting](/article-images/stardust/pitchshift.png)
+![Pitch and formant shifting](/article-images/stardust/pitchshift.jpg)
 
 Honourable mention: it's not the kind of pitch-shifting they're talking about,
 but I also used an auto-tune editor to produce the three different tunings of
@@ -46,7 +46,7 @@ version). I also use vocal stutter effects towards the end, which MusicRadar
 warns "might have a tendency to date your mix" - which, in this case, is
 exactly what I was going for!
 
-![Tuning and stutter](/article-images/stardust/shift-and-stutter.png)
+![Tuning and stutter](/article-images/stardust/shift-and-stutter.jpg)
 
 # Reverse reverb
 
@@ -84,7 +84,7 @@ of the effects by automating either the sidechain send level, or the receiver
 level; plus you can add "bus-wide" effects over the whole lot by putting them
 on the group itself.
 
-![Delay-lay-lay-lay](/article-images/stardust/delay.png)
+![Delay-lay-lay-lay](/article-images/stardust/delay.jpg)
 
 # Master FX
 
@@ -99,7 +99,7 @@ I picked up both Wires and Reels in a recent sale, and am not embarrassed to
 say I think I've used multiple instances of both - sometimes in series on the
 same sound - in every track I've worked on since.
 
-![Effects on the master channel](/article-images/stardust/masterfx.png)
+![Effects on the master channel](/article-images/stardust/masterfx.jpg)
 
 ## Exciters and Widening
 
@@ -124,7 +124,7 @@ corner frequencies, and per-band & global stereo width controls (the cone with
 "2.0 dB" above it in the bottom right); then finally, I've got the compressor
 in Limiter 6 GE giving a 1 dB boost to the sides.
 
-![Exciting!](/article-images/stardust/exciters.png)
+![Exciting!](/article-images/stardust/exciters.jpg)
 
 Here's a little demo: the same section of the track repeated three times, first
 without any widening or exciters, then with just the stereo widening, then with
@@ -152,7 +152,7 @@ or score in front of you.
 
 Here are the first two chords used in the strings on Stardust:
 
-![Spot the deliberate mistake](/article-images/stardust/dissonance.png)
+![Spot the deliberate mistake](/article-images/stardust/dissonance.jpg)
 
 Notice anything strange? The eagle-eyed among you may notice there's a G in
 that B-flat major chord, and an A in the C major chord. Both chords are
