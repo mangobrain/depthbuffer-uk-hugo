@@ -25,7 +25,7 @@ and realised that in the unabashed pursuit of style over substance, I've used
 four of the six in this very track. I thought I'd share some others I'm quite
 fond of as well.
 
-# Pitch & formant shifting
+## Pitch & formant shifting
 
 MusicRadar count these as two separate tricks, but really, they're just
 different settings on the same plugin - or at least, that's the case for both
@@ -48,7 +48,7 @@ exactly what I was going for!
 
 ![Tuning and stutter](/article-images/stardust/shift-and-stutter.jpg)
 
-# Reverse reverb
+## Reverse reverb
 
 I didn't use this one here, but I've used similar tricks in the past, in
 particular taking sounds with nice long tails - gongs, crash cymbals, etc. -
@@ -57,14 +57,14 @@ at the start of the next bar. [Soundtrackers](https://youtu.be/roBkg-iPrbw) are
 at heart just fancy samplers, and Renoise is at heart just a fancy
 soundtracker, so that kind of sample manipulation is trivial.
 
-# Vocoding
+## Vocoding
 
 Again, didn't use this one here, but I'm a big fan. Done it before; will
 definitely do it again. I second their suggestion to use carrier sounds with
 lots of harmonics (or "rich spectral content" as they put it), and experiment
 with carrier _harmonies_ rather than limit yourself to one note at a time.
 
-# Multi-tap delays
+## Multi-tap delays
 
 Yep. Went a bit overboard with this one on this track. At one point, the 303
 is layered through Minimonsta's built-in delay, a "gapper" that basically
@@ -72,7 +72,7 @@ selectively drops small sections of the sound, followed by two other multi-tap
 delays: a slow spacious one as an alternative to reverb, adding a sense of
 scale; and a much shorter one added in later sections to change things up.
 
-## Bonus: automating the mix of multiple effects in Renoise
+### Bonus: automating the mix of multiple effects in Renoise
 
 Renoise has limitations on sends/inserts, but I have a favourite trick to work
 around those when you want to blend effects that don't have a built in wet/dry
@@ -86,7 +86,7 @@ on the group itself.
 
 ![Delay-lay-lay-lay](/article-images/stardust/delay.jpg)
 
-# Master FX
+## Master FX
 
 Yep. For the "fade in" at the start of the track, I used two things on the
 master bus: a simple bandpass filter with a descending corner frequency, and
@@ -101,7 +101,7 @@ same sound - in every track I've worked on since.
 
 ![Effects on the master channel](/article-images/stardust/masterfx.jpg)
 
-## Exciters and Widening
+### Exciters and Widening
 
 Two of my favourite things to put on the master bus recently are exciters and
 stereo wideners. Both have to be used sparingly. The former, if over-applied,
@@ -132,14 +132,14 @@ widening plus exciters. Headphones on for maximum effect.
 
 {{< audio src="/media/stardust/fx.mp3" >}}
 
-# Other Tricks
+## Other Tricks
 
 So other than the above, what other tricks did I employ? Well, other than the
 ones related to track structure itself - the four-on-the-floor beat, the
 repetitive vocal motif, the changing up of layers over time, etc. - there are
 two things in particular I did that I think of as "tricks".
 
-## Subtle Dissonance
+### Subtle Dissonance
 
 If you've studied a little music theory but not really dived into
 producing/composing your own material, you're probably aware that Dissonance Is
@@ -169,7 +169,7 @@ to highlight the difference.
 
 {{< audio src="/media/stardust/dissonance.mp3" >}}
 
-## Guitar Amps Aren't Just for Guitars
+### Guitar Amps Aren't Just for Guitars
 
 Staying with that string sound, another thing I did was run it through a guitar
 amp & cabinet simulator. Nothing fancy, just the one that ships with Renoise.
@@ -198,7 +198,7 @@ but I prefer this method, and could have trivially taken things much further
 if warranted. It just sounds a bit more... "cinematic", don't you think? Not
 that the base sound isn't nice on its own.
 
-# Smoke and Mirrors
+## Smoke and Mirrors
 
 Are these things really "tricks" if they actually work? Well, yes and no. In a
 track like Stardust, where I deliberately made so many elements as basic as
