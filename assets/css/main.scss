@@ -283,6 +283,13 @@ div.main-container div.menu
             }
         }
 
+        div.twitter-timeline
+        {
+            margin: 0;
+            padding: 0;
+            border-style: none;
+        }
+
         > :last-child
         {
             margin-bottom: 0;
