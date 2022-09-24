@@ -207,6 +207,8 @@ header.top
 main
 {
     padding: 2% 4%;
+    max-width: 1560px;
+    margin: 0 auto;
 
     /* Mysterious hax to make footer stick to bottom */
     flex: 1 0 auto;
@@ -251,7 +253,7 @@ div.main-container div.menu
         /* The elements inside the menu stack as a flex column */
         display: flex;
         flex-direction: column;
-        margin-left: 15px;
+        margin-left: 30px;
         font-family: 'Montserrat', sans-serif;
         font-weight: 900;
         font-size: 1.15em;
@@ -561,7 +563,7 @@ div.postlist-item
         div.postlist-item
         {
             margin-right: 0;
-            max-width: 28%;
+            width: 45%;
         }
     }
 }
