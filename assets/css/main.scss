@@ -302,9 +302,18 @@ div.main-container div.menu
 /* listing elements                                                    */
 /***********************************************************************/
 
-p.post-header time
+p.post-header
 {
-    margin-left: 8px;
+    margin-top: 0;
+    font-size: 1em;
+
+    time {
+        margin-left: 8px;
+    }
+
+    p {
+        margin-top: 0;
+    }
 }
 
 div.postlist-item, div.archive-year, article.single, article.section, div.main-container div.menu div
@@ -325,7 +334,7 @@ div.postlist-item, div.archive-year, article.single
         text-align: left;
         text-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
     }
-    p
+    p:not(.post-header)
     {
         margin: 0.5em 0 0;
     }
