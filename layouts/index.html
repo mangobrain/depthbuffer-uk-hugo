@@ -21,21 +21,28 @@
                             <header>
                                 <h1 itemprop="name headline">{{ .Title }}</h1>
                                 <p class="post-header">
-                                    {{ $date := .Date.Format "2006-01-02" }}
+                                    {{ $date := .Date.Format "2006-01-02" -}}
                                     <time datetime="{{ $date }}" itemprop="datePublished">
                                         {{ $date }}
                                     </time>
                                 </p>
                             </header>
                             {{ .Summary }}
-                            {{ if .Truncated }}
+                            {{- if .Truncated }}
                                 &hellip;
                                 <p class="postlist-link">Read more</p>
-                            {{ else }}
+                            {{- else }}
                                 <p class="postlist-link">Permalink</p>
-                            {{ end }}
+                            {{- end }}
                         </article>
                     </a>
+                    {{- if isset .Params "tags" }}
+                    <p class="postlink-tags">
+                        {{- range .Params.tags }}
+                        <a href="/tags/{{ . | urlize }}">#{{ . }}</a>
+                        {{- end }}
+                    </p>
+                    {{- end }}
                 </div>
                 {{ end }}
             </div>
