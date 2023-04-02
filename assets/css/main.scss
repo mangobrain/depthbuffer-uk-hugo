@@ -636,6 +636,8 @@ div.archive-year
     h1, ul
     {
         margin: 0;
+        padding-left: 40px;
+        padding-right: 20px;
     }
 
     div.post-list-item
@@ -654,6 +656,7 @@ div.archive-year
     time.post-date
     {
         display: inline-block;
+        margin-left: 1em;
     }
 }
 

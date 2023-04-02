@@ -1,0 +1,22 @@
+{{ define "main" }}
+    <div class="main-container">
+        <div class="archive">
+            <div class="archive-year">
+                <h1>#{{ .Title }}</h1>
+                <ul>
+                {{ range .Pages.ByDate.Reverse }}
+                    <li>
+                        <div class="post-list-item">
+                            <div class="post-title">
+                                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                            </div>
+                            <time class="post-date">{{ .Date.Format "2006-01-02" }}</time>
+                        </div>
+                    </li>
+                {{ end }}
+                </ul>
+            </div>
+        </div>
+{{ partial "menu" }}
+    </div>
+{{ end }}

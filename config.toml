@@ -1,7 +1,7 @@
 baseURL = "https://www.depthbuffer.uk/"
 languageCode = "en-GB"
 title = "Depthbuffer"
-disableKinds = ["taxonomy", "taxonomyTerm", "category", "sitemap", "RSS"]
+disableKinds = ["sitemap", "RSS"]
 summaryLength = "40"
 
 [markup]
@@ -16,3 +16,6 @@ summaryLength = "40"
 
 [social]
     twitter = "DepthbufferM"
+
+[taxonomies]
+    tag = 'tags'

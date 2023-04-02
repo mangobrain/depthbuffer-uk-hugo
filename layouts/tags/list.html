@@ -1,0 +1,21 @@
+{{ define "main" }}
+    <div class="main-container">
+        <div class="archive">
+            <div class="archive-year">
+                <ul>
+                {{ range .Data.Terms.Alphabetical }}
+                    <li>
+                        <div class="post-list-item">
+                            <div class="post-title">
+                                <a href="/tags/{{ .Term | urlize }}">#{{ .Term }}</a>
+                            </div>
+                            <time class="post-date">{{ .Count }}</time>
+                        </div>
+                    </li>
+                {{ end }}
+                </ul>
+            </div>
+        </div>
+{{ partial "menu" }}
+    </div>
+{{ end }}
