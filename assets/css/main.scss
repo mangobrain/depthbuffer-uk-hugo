@@ -217,6 +217,10 @@ main
     {
         margin-top: 0;
     }
+
+    div.main-container:first-child
+    {
+    }
 }
 
 a:link
@@ -684,6 +688,12 @@ div.archive-year
         display: inline-block;
         margin-left: 1em;
     }
+}
+
+div.archive-type
+{
+    margin: auto;
+    margin-bottom: 1em;
 }
 
 @media print

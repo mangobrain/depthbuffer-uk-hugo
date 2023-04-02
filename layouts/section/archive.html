@@ -1,11 +1,12 @@
 {{ define "main" }}
     <div class="main-container">
         <div class="archive">
-        {{ range (where site.RegularPages "Type" "in" "posts").GroupByDate "2006" }}
+            <div class="archive-type">Chronological | <a href="/tags">Tags</a></div>
+        {{- range (where site.RegularPages "Type" "in" "posts").GroupByDate "2006" }}
             <div class="archive-year">
                 <h1>{{ .Key }}</h1>
                 <ul>
-                {{ range .Pages.ByDate.Reverse }}
+                {{- range .Pages.ByDate.Reverse }}
                     <li>
                         <div class="post-list-item">
                             <div class="post-title">
@@ -14,10 +15,10 @@
                             <time class="post-date">{{ .Date.Format "2006-01-02" }}</time>
                         </div>
                     </li>
-                {{ end }}
+                {{- end }}
                 </ul>
             </div>
-        {{ end }}
+        {{- end }}
         </div>
 {{ partial "menu" }}
     </div>
