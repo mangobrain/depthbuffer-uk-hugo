@@ -4,6 +4,12 @@ date: 2022-01-21T16:37:58Z
 icon: music
 summary: Tricks for your mix
 images: ['/post-thumbnails/Stardust.png']
+tags:
+- article
+- music
+- mixing
+- production
+- tutorial
 ---
 The little video at the end of my last post hinted that a full track would be
 coming soon, and [it's here](https://depthbuffer.bandcamp.com/album/stardust).

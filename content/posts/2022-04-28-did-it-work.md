@@ -4,6 +4,10 @@ date: 2022-04-28T10:41:04+01:00
 icon: music
 summary: So, did I attain ataraxia?
 images: ['/post-thumbnails/Ataraxy.png']
+tags:
+- article
+- music
+- postmortem
 ---
 After much delay, I finally finished my second "real" album. At this point, I
 honestly can't say exactly how long I was working on it; other than however

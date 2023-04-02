@@ -3,6 +3,10 @@ title: "Repurposing the Mellotron as an expressive virtual acoustic instrument"
 date: 2022-02-22T19:15:50Z
 icon: article
 draft: false
+tags:
+- article
+- production
+- tutorial
 ---
 Ah, the glorious, wonderful
 [Mellotron](https://en.wikipedia.org/wiki/Mellotron). Where would I be without
