@@ -2,7 +2,7 @@
 title: "Announcing Memento Potato"
 date: 2023-04-22T15:25:28+01:00
 icon: article
-draft: true
+draft: false
 images: ['/post-thumbnails/MementoPotato.png']
 tags:
 - memento potato
@@ -44,13 +44,12 @@ religious, or particularly spiritual.)
 
 Time to tone it down a bit, methinks.
 
-# Have More Fun
-
+## Have More Fun
 I started this whole Depthbuffer thing with only one rule: don't pick one genre
 and worry about sticking to it. I'm under no illusions that I'm setting the
 industry on fire, pushing the envelope, breaking down musical boundaries, going
 where no-one's gone before or anything like that; but equally, I don't want to
-define myself as a "synthwave guy" and feel like I can't do anyting else
+define myself as a "synthwave guy" and feel like I can't do anything else
 without setting up a whole new side project. It's not a grand philosophical
 experiment - it's as much about me being crap at identifying genre as it is
 anything else, to be honest - but I'm doing this for myself, in my spare time,
@@ -59,14 +58,13 @@ about the fact that I'm just a nerd who loves music, with a ton of gaps in my
 knowledge and abilities, making it up as I go along, pursuing whatever shiny
 thing catches my eye next.
 
-Two serious releases in a row felt like I was losing sight of that somewhat,
-and the thought of making an earnest effort to continue in that vein whilst
-keeping up the rate of improvement in polish & quality feels like a chore. I'm
-not against putting in the work, but I am against putting in the work if I'm
-not enjoying it. Because that's kind of the whole point.
+Two serious releases in a row felt like I was losing sight of that somewhat;
+and the thought of making an earnest effort to continue in that vein,
+maintaining the rate of improvement in polish & quality, feels like a chore.
+I'm not against putting in the work, but I am against putting in the work if
+I'm not enjoying it. Because that's kind of the whole point.
 
-# Do All the Things
-
+## Do All the Things
 I've also got a ton of half-finished stuff, ideas for stuff other than music,
 and skills & interests I want to develop besides composition, production, and
 mixing. I'm
@@ -76,12 +74,13 @@ writing about how to actually develop open-source, cross-platform VSTs. I
 [like](https://youtu.be/ti8lWmFdgbE) making
 [videos](https://youtu.be/HLlgoQ9_5rg), even if I'm not very good at it. I've
 got multiple tracks in various states of completion that I don't want to
-abandon, but don't want to release on their own, so feel like I need a reason
-to return to. I want to continue exploring hardware synthesisers (in particular
-Eurorack); not out of analogue snobbery, but simply because I've discovered I
-enjoy it, it gives my fledgling electronics hobby a direction, and because as
-great as plugins are, the more I install, the more maintaining my setup &
-keeping everything up-to-date and licensed feels distressingly like my day job.
+abandon, but don't want to release on their own, so feel like I need a banner
+to put them under. I want to continue exploring hardware synthesisers (in
+particular Eurorack); not out of analogue snobbery, but simply because I've
+discovered I enjoy it, it gives my fledgling electronics hobby a direction, and
+because as great as plugins are, the more I install, the more maintaining my
+setup & keeping everything up-to-date and licensed feels distressingly like my
+day job.
 
 So to address these two points - feeling like I'm pigeon-holing myself when my
 one rule is don't pigeon-hole myself, and having too many things I want to do
@@ -93,8 +92,14 @@ the album. Write articles about those tools. Make vidoes about the tools and
 the music. Put it all under the same umbrella, because there's nobody standing
 behind me telling me I can't. Just do all the things.
 
-# Remember You're a Potato
+I won't be abandoning my software synths entirely - the power &
+convenience, especially when it comes to polyphony and stereo capabilities, are
+too good to pass up - and I'll still be recording, mixing, and mastering
+digitally. But I've had enough of installers, updaters, too-good-to-be-true
+sales, nag screens, subscription up-sells, and thinly-veiled WAV players that
+I'm content not to grow the collection for now.
 
+## Remember You're a Potato
 In what was supposed to be the original spirit of this whole venture, it's also
 about being open & explicit about the fact that I'm just a guy learning to do
 stuff he likes to do. Just a potato, who likes sounds, pictures, words, and
@@ -114,16 +119,27 @@ The cover art ([high res here](/media/mementopotato/hi-res-cover.png)).
 The
 [first & last track of the album](https://depthbuffer.bandcamp.com/album/memento-potato).
 
-I don't know when it'll be done, or how many tracks it'll be, or whether or not
-I'll be happy enough with the end result to do an eventual small-run physical
-edition. I do know that the album on Bandcamp is the "main" end goal of the
+I don't know when it'll be done, or how many tracks it'll be.
+I do know that the album on Bandcamp is the "main" end goal of the
 project, and the digital release will cost whatever you want, including free,
-because it's all a bit of fun. Articles/big updates will be hosted here; videos
+because it's all a bit of fun.
+In fact, since Bandcamp doesn't allow me to set something as pre-order without
+a minimum price & target release date, I'm just putting it out there with "WIP"
+in the name, and not even _allowing_ people to pay until it's done.
+Articles/big updates will be hosted here; videos
 on YouTube; other photos/small updates on some combination of Mastodon,
-Instagram, and/or Twitter; links to those can be found the site menu, and
-everything will be tagged __#mementopotato__.
+Instagram, and/or Twitter. Links to all of those can be found in the site menu,
+and everything will be tagged __#mementopotato__.
 
 I'm not doing Patreon, because I'm making no promises about quality, quantity,
 or timeliness; if you _really_ want to toss me some coin, the best way would be
 [buying some tunes](https://depthbufer.bandcamp.com) - but in case you haven't
 realised by now, I'm going to do this regardless.
+
+It'll be a while, though. Probably over six months. Things always take longer
+than anticipated: I've got the makings of three videos on the go, and combined
+with the two finished tracks & the whole "do more stuff" ethos, it feels like
+high time to make a proper start. But it's just taken me an hour or three to
+write this announcement, so don't hold your breath.
+
+After all, I'm just a potato.
