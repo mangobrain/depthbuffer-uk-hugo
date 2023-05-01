@@ -52,19 +52,81 @@ they do is make connections between bits of metal. If you really wanted to, you
 could make a pair of headphones that required you to solder three wires every
 time you wanted to plug them in.
 
+### Glossary
+
+TODO move to bottom, or separate article?
+
+This is basic stuff. You probably already know it, but maybe not, and in any
+case a refresher can't hurt.
+
+* __V__ is for volts. Always capital V, after Alessandro Volta. A measure of
+  electric _potential energy_: it only really has meaning when comparing two
+  things, and it has to have somewhere to go for that energy to do useful work.
+  * We can put a number on how much energy we transfer to a balloon by
+    rubbing it on a jumper, but it isn't useful to try and count how many
+    electrons the balloon or jumper have in their uncharged, resting states.
+  * After being charged, the balloon will happily sit there doing balloon stuff,
+    until you bring it near something with less charge, like someone's hair or
+    a fingertip.
+  * If it's always relative, how can we have a "9V battery"? 9 volts compared
+    to what? Well, batteries always have two terminals, so a rating like this
+    tells you there's a 9V difference in charge between the positive and
+    negative terminal.
+* __A__ is for amps. Again, always capital A, after André-Marie Ampère. A
+  measure of current, or the _rate at which charge is moving_.
+  * That balloon we rubbed? As long as it isn't touching anything, no charge
+    is moving, so current is 0A. Then you poke it and get shocked: current
+    went above 0A briefly - specifically, for as long as it took for the
+    voltage between the balloon and your finger (their _potential difference_)
+    to drop back to 0V.
+* __Ground__ is a circuit's chosen reference point for zero volts.
+  * Because voltage is always measured between two things, there is also no
+    fixed concept of 0V. But in a circuit with a power supply, if you know
+    the maximum voltage you can generate between your supply terminals, it
+    makes sense to define 0V as the half way point, and measure relative to
+    that.
+  * When making toy circuits like blinking LEDs, it's common to use two 9V
+    batteries connected end to end: the positive end of one is the +9V supply,
+    the negative end of the other is the -9V supply, and the point in the
+    middle where they touch is ground.
+    TODO Draw this.
+  * So called because the Earth itself, the literal ground, is a pretty
+    convenient, near-infinite zero volts reference point: you can pump electrons
+    into it or draw electrons out of it at will without filling it up or running
+    out. (This is not the same as "free energy": for that charge to do work,
+    it needs some impetus to move, which it will only do when faced with
+    something oppositely charged, and will stop once there is no more charge
+    difference. Taking a battery outside and hooking it up to the dirt will
+    just make it drop to 0V ever so slightly more quickly, not magically charge
+    it up.)
+* __Ω__ is for _ohms_, after Georg Simon Ohm. A measure of _resistance_, i.e.
+  the degree to which a material _impedes_ the flow of charge through it. The
+  higher it is, the harder electrons find it to travel, reducing current.
+  * Often written out, or omitted entirely, in favour of just using [SI prefixes](https://en.wikipedia.org/wiki/Metric_prefix) as a kind of shorthand:
+    a "10k resistor" means 10 kilo-ohms, or 10000 ohms.
+* The __±__ symbol means "plus or minus". A ±5V signal means charge is flowing
+  backwards and forwards, maxing out at 5 volts above ground in one diretion,
+  5 volts below it in the other.
+* __Vpp__ means _voltage peak-to-peak_. A ±5V signal could also be referred to
+  aso 10Vpp, because there is a difference of 10 volts between the highest and
+  lowest points.
+  * Strictly speaking, the PP should be in subscript capitals, but I can't do
+    subscript here easily.
+
 ## To the Google Machine!
 
 I'm going to assume a certain amount of knowledge about what a modular synth
-_is_, but try to make the fewest assumptions possible about electronics
+is, but try to make the fewest assumptions possible about electronics
 knowledge. Let's pull some magic numbers off the Interwebs, and worry about
 explaining them later (if at all) - because that's how I'm figuring this stuff
 out, and my whole point here is that you can do the same.
 
-__Why is the audio quiet in the first place?__ Well, it turns out that Eurorack
-uses audio signals anywhere between [plus & minus 5 volts](https://modwiggler.com/forum/viewtopic.php?t=96737)
-and [+/- 10V](https://www.reddit.com/r/synthdiy/comments/8iex2l/eurorack_voltage_standards/),
+### Why is the audio quiet in the first place?
+Well, it turns out that Eurorack
+uses audio signals anywhere between [±5V](https://modwiggler.com/forum/viewtopic.php?t=96737)
+and [±10V](https://www.reddit.com/r/synthdiy/comments/8iex2l/eurorack_voltage_standards/),
 depending on who you ask. Jack sockets on "normal" audio kit, on the other hand,
-will be [somewhere between +/- 0.447V and +/- 1.736V](https://en.wikipedia.org/wiki/Line_level#Nominal_levels).
+will be [somewhere between ±0.447V and ±1.736V](https://en.wikipedia.org/wiki/Line_level#Nominal_levels).
 (To clarify: I'm talking about "line out" sockets here, not headphone sockets.
 These use the same connectors, but trying to look up voltage levels for
 a headphone socket gets me no straight answer, but hints that the answer is
@@ -177,8 +239,7 @@ Anyway, where was I? Yeah. Audio signal voltage levels. It's a mess.
 I hooked up my cheap crappy oscilloscope to the line out of my Zoom H6, and the
 audio out of my Raspberry Pi 4 - the two devices I most care about using to
 quickly pipe external audio into my rack - and got (unsurprisingly) something
-close to "consumer line level": ±0.447V, or 0.894Vpp ("voltage from peak to
-peak", i.e. how far between the maximum and minimum).
+close to "consumer line level": ±0.447V, or 0.894Vpp.
 
 I've decided I want to bump that up to ±5V, or 10Vpp. Because this isn't about
 precision, boosting things by a factor of 10 or 11, to get to peaks of plus
