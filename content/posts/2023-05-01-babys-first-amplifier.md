@@ -7,6 +7,7 @@ images: ['/post-thumbnails/diy-amp.jpg']
 tags:
 - memento potato
 - electronics
+toc: true
 ---
 For a long time, I thought electronics wasn't for me: it was this arcane mixture
 of black magick and hardcore mathematics, in which everything has to be designed
@@ -26,8 +27,6 @@ cargo cult electronics. And that's OK. Because I reckon as long as you learn a
 few basic building blocks, and have an intuitive understanding of how they work,
 and the confidence & curiosity to try out different combinations, you can get
 pretty far. Just [don't start thinking you're an expert](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect).
-
-TODO Insert Table of Contents
 
 ## One Problem, Four Components
 
@@ -52,27 +51,41 @@ they do is make connections between bits of metal. If you really wanted to, you
 could make a pair of headphones that required you to solder three wires every
 time you wanted to plug them in.
 
-### Glossary
+### Electricity; an Illustrated Glossary
 
 TODO move to bottom, or separate article?
 
 This is basic stuff. You probably already know it, but maybe not, and in any
 case a refresher can't hurt.
 
-* __V__ is for volts. Always capital V, after Alessandro Volta. A measure of
+* __V__ is for volts. Always capital V, after [Alessandro Volta](https://en.wikipedia.org/wiki/Alessandro_Volta). A measure of
   electric _potential energy_: it only really has meaning when comparing two
   things, and it has to have somewhere to go for that energy to do useful work.
-  * We can put a number on how much energy we transfer to a balloon by
-    rubbing it on a jumper, but it isn't useful to try and count how many
-    electrons the balloon or jumper have in their uncharged, resting states.
+  * Atoms in materials have a default stable state, in which they typically have
+    the same number of electrons and protons. A material is _negatively charged_
+    if it has more electrons than normal; those electrons won't be bound to any
+    specific atom, and can move around. Conversely, it's _positively charged_ if
+    it has fewer electrons than normal: the protons in atoms with a deficit will
+    attract unbound electrons.
+    TODO Pictures
+  * We can put a number on how much negative energy we transfer to a balloon by
+    rubbing it on a jumper (giving it extra electrons), but it isn't
+    particularly useful to try and count how many electrons the balloon or
+    jumper have in their uncharged, resting states. (Nobody designs circuits
+    with _one specific battery_ in mind, knowing how much charge that battery
+    contains; they design them to work with _any_ battery that, when fully
+    charged, has a 9V potential difference between its terminals. Also, imagine
+    trying to answer how many electrons there are in a socket connected to the
+    mains.)
   * After being charged, the balloon will happily sit there doing balloon stuff,
     until you bring it near something with less charge, like someone's hair or
     a fingertip.
+    TODO: Friction, electrons, zap picture
   * If it's always relative, how can we have a "9V battery"? 9 volts compared
     to what? Well, batteries always have two terminals, so a rating like this
     tells you there's a 9V difference in charge between the positive and
     negative terminal.
-* __A__ is for amps. Again, always capital A, after André-Marie Ampère. A
+* __A__ is for amps. Again, always capital A, after [André-Marie Ampère](https://en.wikipedia.org/wiki/Andr%C3%A9-Marie_Amp%C3%A8re). A
   measure of current, or the _rate at which charge is moving_.
   * That balloon we rubbed? As long as it isn't touching anything, no charge
     is moving, so current is 0A. Then you poke it and get shocked: current
@@ -93,25 +106,40 @@ case a refresher can't hurt.
   * So called because the Earth itself, the literal ground, is a pretty
     convenient, near-infinite zero volts reference point: you can pump electrons
     into it or draw electrons out of it at will without filling it up or running
-    out. (This is not the same as "free energy": for that charge to do work,
-    it needs some impetus to move, which it will only do when faced with
-    something oppositely charged, and will stop once there is no more charge
-    difference. Taking a battery outside and hooking it up to the dirt will
-    just make it drop to 0V ever so slightly more quickly, not magically charge
-    it up.)
-* __Ω__ is for _ohms_, after Georg Simon Ohm. A measure of _resistance_, i.e.
+    out.
+    * This is not "free energy"; for that charge to do work, it needs some
+      impetus to move. Think of a hydroelectric dam: lakes don't just magically
+      radiate free electricity, but allow a raised body of water to fall under
+      gravity, and you can use that motion to drive a turbine. You can't pull
+      electrons from the ground at will, you need something charged to hook it
+      up to.
+  * Also a verb: to "ground" something means to return it to its uncharged
+    state, removing excess electrons (negative charge) or resupplying an
+    electron deficit (positive charge) to its atoms such that they return to
+    their normal, default state.
+* __Ω__ is for _ohms_, after [Georg Ohm](https://en.wikipedia.org/wiki/Georg_Ohm). A measure of _resistance_, i.e.
   the degree to which a material _impedes_ the flow of charge through it. The
   higher it is, the harder electrons find it to travel, reducing current.
   * Often written out, or omitted entirely, in favour of just using [SI prefixes](https://en.wikipedia.org/wiki/Metric_prefix) as a kind of shorthand:
     a "10k resistor" means 10 kilo-ohms, or 10000 ohms.
+    TODO Resistor
+* A __short circuit__ or __short__. Elecricity will travel the path of least
+  resistance. If you take a circuit where the only path between the terminals of
+  the power supply goes through a bunch of components, it'll flow through those
+  components; if you accidentally touch a wire directly from one part of the
+  circuit to another that bypasses a bunch of components - giving the electrons
+  a _shortcut_, if you will - those components won't get power.
+  * Also a verb: to _short_ something is to temporarily create a low resistance
+    path between two points; for example, making a high-voltage capacitor safe
+    to handle by _shorting it to ground_, discharging it.
+  TODO: LED lights up, LED doesn't light up
 * The __±__ symbol means "plus or minus". A ±5V signal means charge is flowing
   backwards and forwards, maxing out at 5 volts above ground in one diretion,
   5 volts below it in the other.
 * __Vpp__ means _voltage peak-to-peak_. A ±5V signal could also be referred to
   aso 10Vpp, because there is a difference of 10 volts between the highest and
   lowest points.
-  * Strictly speaking, the PP should be in subscript capitals, but I can't do
-    subscript here easily.
+  TODO: +/-5V = 10Vpp, 0..10V = 10Vpp
 
 ## To the Google Machine!
 
