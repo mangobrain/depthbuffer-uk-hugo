@@ -481,6 +481,19 @@ article.single
             max-width: 100%;
         }
     }
+
+    details#toc
+    {
+        border-radius: 5px;
+        padding: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+        background: darken($grey-color, 30%);
+
+        summary
+        {
+            font-weight: bold;
+        }
+    }
 }
 
 @media print
