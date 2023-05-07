@@ -1,50 +1,64 @@
         <div class="menu">
-            <div>
-                <a href="/">Home</a>
-            </div>
-            <div>
-                <img src="/bandcamp-button-circle-green-32.png" alt="Bandcamp logo" width="32" height="32">
-                <small>Listen to my music on<br></small>
-                <a href="https://depthbuffer.bandcamp.com/">
-                    Bandcamp
-                </a>
-            </div>
-            <div>
-                <img src="/tumblr-icon.svg" alt="Tumblr logo" width="32" height="32">
-                <small>Follow me on<br></small>
-                <a href="https://depthbuffer.tumblr.com/">Tumblr</a>
-            </div>
-            <div>
-                <img src="/mastodon-icon.svg" alt="Mastodon logo" width="32" height="32">
-                <small>Or<br></small>
-                <a href="https://synthwave.social/@depthbuffer">Mastodon</a>
-            </div>
-            <div>
-                <img src="/youtube-icon-32.png" alt="YouTube logo" width="32" height="32">
-                <small>Sometimes I post videos on<br></small>
-                <a href="https://www.youtube.com/@depthbuffer">YouTube</a>
-            </div>
-            <div>
-                <img src="/instagram-icon-32.png" alt="Instagram logo" width="32" height="32">
-                <small>Occasionally I remember I'm on<br></small>
-                <a href="https://www.instagram.com/depthbuffer/">Instagram</a>
-            </div>
-            <div>
-                <img src="/twitter-icon.svg" alt="Twitter logo" width="32" height="32">
-                <small>I haven't quite fully left<br></small>
-                <a href="https://twitter.com/DepthbufferM">
-                    Twitter
-                </a>
-            </div>
-            <div>
-                <a href="/about">About</a>
-            </div>
-            <div>
-                <a href="/archive">Archive</a>
-            </div>
-            <!-- <div>
-                <img src="https://www.mangobrain.co.uk/icon.png" alt="Mangobrain logo" width="32" height="32">
-                <small>I have another site, because I am a<br></small>
-                <a href="https://www.mangobrain.co.uk/">NERD</a>
-            </div> -->
+            <input type="checkbox" class="menu-open" id="menu-open-2"
+             {{ if .IsHome -}}
+               checked
+             {{- end }}/>
+            <label class="menu-open-button" for="menu-open-2">
+                <span class="burger-1"></span>
+                <span class="burger-2"></span>
+                <span class="burger-3"></span>
+                <span class="shadow burger-1"></span>
+                <span class="shadow burger-2"></span>
+                <span class="shadow burger-3"></span>
+            </label>
+            <nav>
+                <div>
+                    <a href="/">Home</a>
+                </div>
+                <div>
+                    <img src="/bandcamp-button-circle-green-32.png" alt="Bandcamp logo" width="32" height="32">
+                    <small>Listen to my music on<br></small>
+                    <a href="https://depthbuffer.bandcamp.com/">
+                        Bandcamp
+                    </a>
+                </div>
+                <div>
+                    <img src="/tumblr-icon.svg" alt="Tumblr logo" width="32" height="32">
+                    <small>Follow me on<br></small>
+                    <a href="https://depthbuffer.tumblr.com/">Tumblr</a>
+                </div>
+                <div>
+                    <img src="/mastodon-icon.svg" alt="Mastodon logo" width="32" height="32">
+                    <small>Or<br></small>
+                    <a href="https://synthwave.social/@depthbuffer">Mastodon</a>
+                </div>
+                <div>
+                    <img src="/youtube-icon-32.png" alt="YouTube logo" width="32" height="32">
+                    <small>Sometimes I post videos on<br></small>
+                    <a href="https://www.youtube.com/@depthbuffer">YouTube</a>
+                </div>
+                <div>
+                    <img src="/instagram-icon-32.png" alt="Instagram logo" width="32" height="32">
+                    <small>Occasionally I remember I'm on<br></small>
+                    <a href="https://www.instagram.com/depthbuffer/">Instagram</a>
+                </div>
+                <div>
+                    <img src="/twitter-icon.svg" alt="Twitter logo" width="32" height="32">
+                    <small>I haven't quite fully left<br></small>
+                    <a href="https://twitter.com/DepthbufferM">
+                        Twitter
+                    </a>
+                </div>
+                <div>
+                    <a href="/about">About</a>
+                </div>
+                <div>
+                    <a href="/archive">Archive</a>
+                </div>
+                <!-- <div>
+                    <img src="https://www.mangobrain.co.uk/icon.png" alt="Mangobrain logo" width="32" height="32">
+                    <small>I have another site, because I am a<br></small>
+                    <a href="https://www.mangobrain.co.uk/">NERD</a>
+                </div> -->
+            </nav>
         </div>
