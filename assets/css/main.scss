@@ -436,10 +436,17 @@ div.postlist-item.video, article.single.video
 article.single
 {
     flex: 1;
+    font-size: 12pt;
 
     h1:first-of-type
     {
+        font-size: 30px;
         margin-bottom: 0;
+    }
+
+    h2, h3, h4
+    {
+        margin: 0.5em 0 0 0;
     }
 
     img
@@ -485,6 +492,7 @@ article.single
     details#toc
     {
         border-radius: 5px;
+        margin: 0.5em;
         padding: 5px;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
         background: darken($grey-color, 30%);
