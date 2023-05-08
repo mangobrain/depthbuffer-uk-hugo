@@ -51,14 +51,12 @@ they do is make connections between bits of metal. If you really wanted to, you
 could make a pair of headphones that required you to solder three wires every
 time you wanted to plug them in.
 
-### Electricity; an Illustrated Glossary
-
-TODO move to bottom, or separate article?
+### Electricity; an Illustrated, Incomplete, Inalphabetic Glossary
 
 This is basic stuff. You probably already know it, but maybe not, and in any
 case a refresher can't hurt.
 
-* __V__ is for volts. Always capital V, after [Alessandro Volta](https://en.wikipedia.org/wiki/Alessandro_Volta). A measure of
+* __V__ is for volts, named for [Alessandro Volta](https://en.wikipedia.org/wiki/Alessandro_Volta). A measure of
   electric _potential energy_: it only really has meaning when comparing two
   things, and it has to have somewhere to go for that energy to do useful work.
   * Atoms in materials have a default stable state, in which they typically have
@@ -85,7 +83,7 @@ case a refresher can't hurt.
     to what? Well, batteries always have two terminals, so a rating like this
     tells you there's a 9V difference in charge between the positive and
     negative terminal.
-* __A__ is for amps. Again, always capital A, after [André-Marie Ampère](https://en.wikipedia.org/wiki/Andr%C3%A9-Marie_Amp%C3%A8re). A
+* __A__ is for amps, named for [André-Marie Ampère](https://en.wikipedia.org/wiki/Andr%C3%A9-Marie_Amp%C3%A8re). A
   measure of current, or the _rate at which charge is moving_.
   * That balloon we rubbed? As long as it isn't touching anything, no charge
     is moving, so current is 0A. Then you poke it and get shocked: current
