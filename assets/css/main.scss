@@ -171,6 +171,12 @@ header.top
             margin: 0;
             font-size: 28px;
         }
+
+        a
+        {
+            color: $text-color;
+            text-decoration: none;
+        }
     }
 
     /* Hide in-header nav menu on desktop devices */
@@ -198,10 +204,8 @@ header.top
     {
         font-size: 1.5em;
 
-        /* Reset H1 font size explicitly back to CSS default; margin slightly
-           smaller than the default */
         h1 {
-            font-size: 2em;
+            font-size: 1.6em;
             margin-top: 0.5em;
             margin-bottom: 0.5em;
         }
@@ -214,7 +218,8 @@ header.top
 
 main
 {
-    padding: 2% 4%;
+    /* Don't bother with side padding in portrait mode */
+    padding: 2% 0%;
     max-width: 1560px;
     margin: 0 auto;
 
@@ -228,6 +233,14 @@ main
 
     div.main-container:first-child
     {
+    }
+}
+
+@media only screen and (min-width: $width-desktop)
+{
+    main
+    {
+        padding: 2% 4%;
     }
 }
 
@@ -249,8 +262,18 @@ div.main-container div.menu nav
 {
     display: none;
 }
+input.menu-open#menu-open-2 ~ label.menu-open-button
+{
+    display: none;
+}
 @media only screen and (min-width: $width-desktop)
 {
+    /* Unhide the in-page menu open button on desktop only */
+    input.menu-open#menu-open-2 ~ label.menu-open-button
+    {
+        display: block;
+    }
+
     main
     {
         overflow-x: hidden;
@@ -530,6 +553,17 @@ article.single
         {
             font-weight: bold;
         }
+    }
+
+    ul, ol
+    {
+        margin: 0.5em 0 0;
+        padding: 0 0 0 1em;
+    }
+
+    li > ul, li > ol
+    {
+        margin: 0;
     }
 }
 
