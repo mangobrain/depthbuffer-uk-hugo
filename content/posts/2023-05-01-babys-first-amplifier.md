@@ -65,7 +65,7 @@ case a refresher can't hurt.
     specific atom, and can move around. Conversely, it's _positively charged_ if
     it has fewer electrons than normal: the protons in atoms with a deficit will
     attract unbound electrons.
-    TODO Pictures
+![Hydrogen atom & ion](/article-images/diy-amp/atom.png)
   * We can put a number on how much negative energy we transfer to a balloon by
     rubbing it on a jumper (giving it extra electrons), but it isn't
     particularly useful to try and count how many electrons the balloon or
@@ -78,7 +78,7 @@ case a refresher can't hurt.
   * After being charged, the balloon will happily sit there doing balloon stuff,
     until you bring it near something with less charge, like someone's hair or
     a fingertip.
-    TODO: Friction, electrons, zap picture
+![Charging a balloon with static by rubbing it on a woolly jumper](/article-images/diy-amp/balloon-static.png)
   * If it's always relative, how can we have a "9V battery"? 9 volts compared
     to what? Well, batteries always have two terminals, so a rating like this
     tells you there's a 9V difference in charge between the positive and
@@ -111,6 +111,14 @@ case a refresher can't hurt.
       gravity, and you can use that motion to drive a turbine. You can't pull
       electrons from the ground at will, you need something charged to hook it
       up to.
+    * When dealing with high voltages and/or electronics in metal enclosures,
+      sometimes you'll see people disambiguating between _ground_ - the 0V
+      reference point in a circuit - and ___earth___, a connection to a literal
+      metal rod driven into the earth (an "earth rod"). Mains sockets & power
+      supplies for these sort of circumstances will have a dedicated earth pin,
+      electrically connected to any exposed bits of metal that might otherwise
+      build up charge and zap you when touching, say, the side of your
+      microwave.
   * Also a verb: to "ground" something means to return it to its uncharged
     state, removing excess electrons (negative charge) or resupplying an
     electron deficit (positive charge) to its atoms such that they return to
@@ -120,7 +128,17 @@ case a refresher can't hurt.
   higher it is, the harder electrons find it to travel, reducing current.
   * Often written out, or omitted entirely, in favour of just using [SI prefixes](https://en.wikipedia.org/wiki/Metric_prefix) as a kind of shorthand:
     a "10k resistor" means 10 kilo-ohms, or 10000 ohms.
-    TODO Resistor
+* __F__ is for _farads_, after [Michael Faraday](https://en.wikipedia.org/wiki/Michael_Faraday).
+  This measures the ability of a thing to store electrical charge.
+  * It is distinct from __C__ for _coulombs_, after [Charles-Augustin de Coulomb](https://en.wikipedia.org/wiki/Charles-Augustin_de_Coulomb),
+    which directly measures an amount of charge, in the literal sense that
+    [you can directly relate it to numbers of electrons](https://en.wikipedia.org/wiki/Coulomb#Definition).
+  * Capacitors are measured in farads rather than coulombs because charge is
+    _compressible_: if you think of voltage as pressure, charge as clothes, and
+    a capacitor as a suitcase, then capacitors store more charge at higher
+    voltages, in the same way you can jam more into your suitcase by sitting on
+    it.
+![Some electrical symbols](/article-images/diy-amp/symbols.png)
 * A __short circuit__ or __short__. Elecricity will travel the path of least
   resistance. If you take a circuit where the only path between the terminals of
   the power supply goes through a bunch of components, it'll flow through those
@@ -130,14 +148,14 @@ case a refresher can't hurt.
   * Also a verb: to _short_ something is to temporarily create a low resistance
     path between two points; for example, making a high-voltage capacitor safe
     to handle by _shorting it to ground_, discharging it.
-  TODO: LED lights up, LED doesn't light up
+![A simple LED circuit, shorted and not](/article-images/diy-amp/led-short.png)
 * The __±__ symbol means "plus or minus". A ±5V signal means charge is flowing
   backwards and forwards, maxing out at 5 volts above ground in one diretion,
   5 volts below it in the other.
 * __Vpp__ means _voltage peak-to-peak_. A ±5V signal could also be referred to
   aso 10Vpp, because there is a difference of 10 volts between the highest and
   lowest points.
-  TODO: +/-5V = 10Vpp, 0..10V = 10Vpp
+![Vpp](/article-images/diy-amp/vpp.png)
 
 ## To the Google Machine!
 
