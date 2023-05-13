@@ -35,7 +35,7 @@ know how close I actually got, but the intended English translation is
 something like "for the love of signals"; though I'll also claim any
 ambiguity - is it "for the signal's love", or "for the love of signs", or
 "for signs of love", or any of the other countless variations different online
-translation tools have givem me? Yes. That said, I don't know what's more
+translation tools have given me? Yes. That said, I don't know what's more
 cringeworthy: naming an album in a dead classical language I don't know,
 naming an album something that _I'm not even 100% sure means what I think it
 means_ and running with it anyway, or the fact that the final linguistic
