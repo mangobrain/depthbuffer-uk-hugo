@@ -19,7 +19,7 @@ in which I am ostensibly producing [my third album](https://depthbuffer.bandcamp
 but also using it as a vehicle for tons of other things I've wanted to
 build/film/explain/nerd out about along the way.
 
-Picking up where we left of...
+Picking up where we left off...
 
 ## Why is the audio quiet in the first place?
 
