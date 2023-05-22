@@ -14,6 +14,11 @@ This article is part of my series on building a Eurorack audio amplifier, to
 go from line-out on a field recorder or Raspberry Pi to my modular synth rack.
 To start from the beginning, [click here](/posts/2023-05-21-babys-first-amplifier/).
 
+This is part of my [Memento Potato project](/posts/2023-04-22-memento-potato/),
+in which I am ostensibly producing [my third album](https://depthbuffer.bandcamp.com/album/memento-potato) and releasing each track as & when it's done,
+but also using it as a vehicle for tons of other things I've wanted to
+build/film/explain/nerd out about along the way.
+
 ## The Electrons Must Flow
 
 Let's take a step back. What even is electricity? Electrons flow through wires,
@@ -59,7 +64,7 @@ a fluid inside those pipes.
   * Disconnecting a battery is like blocking the inlet & outlet: the pump will
     push until the fluid is pressing on the outlet cap at the rated pressure,
     then stop. In fact, all pipes in this analogy are implicitly capped when
-    disconnected; 
+    disconnected. 
 * Earth is like the ocean, or a huge lake: you can pump fluid into it, and suck
   fluid out of it, but there's so much of it that you won't ever be able to
   drain it or over-fill it, and it's open to the air so you can't pressurise it.
@@ -172,7 +177,7 @@ The resistors & small capacitors will filter out high-frequency fluctuations,
 such as you might get if there's a digital module sat somewhere in the same rack
 with a high-frequency clock oscillating away noisily, or radio frequency
 interference. The big capacitors smooth out temporary dips in supply. The two
-diodes, one in each direction, ensures the +12V rail won't become a -12V rail
+diodes, one in each direction, ensure the +12V rail won't become a -12V rail
 (and vice versa) if a ribbon cable is connected backwards; rather, the module
 won't turn on. Also, the resistors will burn out in some other cases of short
 circuit or malfunction; but that's a side benefit that might save some fried

@@ -29,6 +29,23 @@ few basic building blocks, and have an intuitive understanding of how they work,
 and the confidence & curiosity to try out different combinations, you can get
 pretty far. Just [don't start thinking you're an expert](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect).
 
+This is part of my [Memento Potato project](/posts/2023-04-22-memento-potato/),
+in which I am ostensibly producing [my third album](https://depthbuffer.bandcamp.com/album/memento-potato) and releasing each track as & when it's done,
+but also using it as a vehicle for tons of other things I've wanted to
+build/film/explain/nerd out about along the way.
+
+## The End Goal
+
+In this series of five articles - originally one, but it kind of got out of
+hand - we're going to build this thing.
+
+![Circuit diagram for basic consumer-line-level to Eurorack-level audio amplifier](/article-images/diy-amp/circuit-diagram.png)
+
+But by the time we get there, I want you to understand how it works. I want
+you to be able to look at individual bits of it and recognise what they do,
+and how they fit together, and that you could totally build a better one of
+these yourself by the time you get to the end.
+
 ## One Problem, Four Types of Component
 
 ![My main rack, Blep >](/article-images/diy-amp/blep.jpg)
@@ -137,8 +154,8 @@ graphics tablet I just bought.)
     to drop back to 0V.
 * __Ground__ is a bit of an overloaded term. The below may not be entirely
   correct, and is almost certainly incomplete, but I'll try and disambiguate
-  the uses I am aware.
-  * If you just have a single, two-terminal power supply - positive and
+  the uses I am aware of.
+  * If you just have a single, two-terminal power supply - a positive and
     a negative, or even just a positive and something marked "ground" - and no
     high voltages, metal enclosures, or anything else fancy, then "ground" is
     just shorthand for "go back to the negative terminal". You often see the
@@ -151,7 +168,7 @@ graphics tablet I just bought.)
       means.
   * Because voltage is always measured between two things, there is also no
     fixed concept of 0V. But in a circuit with positive and negative supply
-    terminals, if you know voltage generated between them, it
+    terminals, if you know the voltage generated between them, it
     makes sense to define 0V as the half way point, and measure relative to
     that. This is __signal ground__.
     * When making a circuit like this on a breadboard, it's common to use two 9V
@@ -215,8 +232,8 @@ graphics tablet I just bought.)
   * Also a verb: to _short_ something is to temporarily create a low resistance
     path between two points; for example, making a high-voltage capacitor safe
     to handle by _shorting it to ground_, discharging it.
-* The __±__ symbol means "plus or minus". A ±5V signal means charge is flowing
-  backwards and forwards, maxing out at 5 volts above ground in one diretion,
+* The __±__ symbol means "plus or minus". A ±5V signal means charge may flow both
+  backwards and forwards, maxing out at 5 volts above ground in one direction,
   5 volts below it in the other.
 * __Vpp__ means _voltage peak-to-peak_. A ±5V signal could also be referred to
   aso 10Vpp, because there is a difference of 10 volts between the highest and
@@ -242,6 +259,23 @@ battery, the maths all works out.
 I actually measured 19V between the positive and negative rails here; clearly
 these particular batteries are putting out slightly higher voltages than they
 should be, but for experimenting & illustrating the point, this is fine.
+
+## Why is the audio quiet in the first place?
+
+Well, it turns out that Eurorack
+uses audio signals anywhere between [±5V](https://modwiggler.com/forum/viewtopic.php?t=96737)
+and [±10V](https://www.reddit.com/r/synthdiy/comments/8iex2l/eurorack_voltage_standards/),
+depending on who you ask. Jack sockets on "normal" audio kit, on the other hand,
+will be [somewhere between ±0.447V and ±1.736V](https://en.wikipedia.org/wiki/Line_level#Nominal_levels).
+(To clarify: I'm talking about "line out" sockets here, not headphone sockets.
+These use the same connectors, but trying to look up voltage levels for
+a headphone socket gets me no straight answer, but hints that the answer is
+[much](https://en.wikipedia.org/wiki/Headphone_amplifier) more [nuanced](https://www.sweetwater.com/insync/speaker-level/), so let's just forget about that.)
+
+![Voltage reference for line-level audio](/article-images/diy-amp/line-level.png)
+
+(Image credit [AlanM1](https://commons.wikimedia.org/wiki/User:AlanM1); used
+under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) / SVG exported to PNG.)
 
 ## To Be Continued
 

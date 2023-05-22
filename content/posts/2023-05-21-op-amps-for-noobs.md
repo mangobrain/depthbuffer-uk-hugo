@@ -14,6 +14,11 @@ This article is part of my series on building a Eurorack audio amplifier, to
 go from line-out on a field recorder or Raspberry Pi to my modular synth rack.
 To start from the beginning, [click here](/posts/2023-05-21-babys-first-amplifier/).
 
+This is part of my [Memento Potato project](/posts/2023-04-22-memento-potato/),
+in which I am ostensibly producing [my third album](https://depthbuffer.bandcamp.com/album/memento-potato) and releasing each track as & when it's done,
+but also using it as a vehicle for tons of other things I've wanted to
+build/film/explain/nerd out about along the way.
+
 ## Operational Amplifiers
 
 To recap: we know why our line-out audio is so quiet when piped into the rack,
@@ -28,7 +33,7 @@ audio levels.
 For that, we'll need the fourth of the four component types I listed in the
 intro: _operational amplifiers_, or op-amps for short. I won't go into _how_
 an op-amp works - partly because I don't actually know myself; partly because
-this article is already too large and has taken too long to write, so I have to
+this article series is already too large and has taken too long to write, so I have to
 draw the line somewhere - but will cover _what they do_, and how we can coerce
 their behaviour into something useful & controllable.
 
@@ -84,8 +89,8 @@ mimics Vin.
   _really_ interesting, because it actually becomes __Vout = G(V+ - Vout)__.
 * Because of the loop, V+, V-, and Vout always change together. Instead of the
   output just slamming between the rails, the behaviour becomes:
-  * __When V+ is bigger than V-, Vout (and hence future V-) will go up__
-  * __When V+ is smaller than V-, Vout (and hence future V-) will go down__
+  * __When V+ is higher than V-, Vout (and hence future V-) will go up__
+  * __When V+ is lower than V-, Vout (and hence future V-) will go down__
   * __When V+ = V-, Vout stops changing__
 * Effectively, the op-amp "wants" to satisfy __V+ = V- = Vout__, and will swing
   Vout as necessary to make that true.
@@ -237,7 +242,7 @@ the op-amps inside the chip.
     in the milliamp range. This ensures the part does not draw too much current."
 * Don't leave unconnected inputs floating.
   * In a non-inverting amplifier like the above, one input is always used, as
-    it's connected to the feedback loop; but the other output should always be
+    it's connected to the feedback loop; but the other input should always be
     connected to either signal or ground, not just left disconnected. Left
     disconnected, it'll be picking up random noisy voltages from any passing
     interference, and constantly trying to amplify them, instead of sat there

@@ -14,11 +14,16 @@ This article is part of my series on building a Eurorack audio amplifier, to
 go from line-out on a field recorder or Raspberry Pi to my modular synth rack.
 To start from the beginning, [click here](/posts/2023-05-21-babys-first-amplifier/).
 
+This is part of my [Memento Potato project](/posts/2023-04-22-memento-potato/),
+in which I am ostensibly producing [my third album](https://depthbuffer.bandcamp.com/album/memento-potato) and releasing each track as & when it's done,
+but also using it as a vehicle for tons of other things I've wanted to
+build/film/explain/nerd out about along the way.
+
 ## The Final Circuit
 
 ### The Final Recap
 
-To recap again, because this article is getting far, _far_, ___far___ too long
+To recap again, because this article series is getting far, _far_, ___far___ too long
 now:
 
 * We know why our audio is too quiet when we hook up the field recorder/
@@ -56,8 +61,7 @@ Are we forgetting anything?
 
 ### Setting the Gain
 
-Crap. We never actually looked at _how much_ we need to boost the audio by.
-Way, way back near the top (oh how innocent we were back then - was I even
+Way, way back in part 1 (oh how innocent we were back then - was I even
 talking to you in the second person yet? Inconsistently, you say? Huh), I
 measured the voltages coming out of my field recorder's line out at ±0.447V, or
 0.894Vpp. Otherwise known as "consumer line level".
@@ -83,33 +87,11 @@ we can get to the following:
 Or, if we actually remembered that there's a simpler gain equation for
 non-inverting amplifiers, and [bothered following our own links](https://www.electronics-tutorials.ws/opamp/opamp_3.html),
 we could have jumped straight to G = 1 + Rf/Rg = 1 + 1000/100 = 11. But we didn't
-do that, because we're idiots, and instead wasted half an hour looking at
-what 0.25W resistor values are cheap on CPC and plugging numbers into a stupid
+do that, because we're idiots, and instead wasted an hour or two looking at
+what 0.25W resistor values are cheap on CPC and plugging numbers the wrong stupid
 form.
 
-### Tools
-
-Just the basics: soldering iron, spools of insulated wire, wire stripper/cutter,
-soldering mat, [PCB holder](https://cpc.farnell.com/duratool/d03170/pcb-holder/dp/SD02126),
-multimeter, etc. These [breadboard kits](https://cpc.farnell.com/pro-signal/psg08689/breadboardjumper-wire-kit/dp/PC02123)
-with a bunch of different included jumper wire lengths are pretty nice, too.
-
-Only other thing I'd say it's definitely worth having if you're getting into
-synth DIY is an oscilloscope. Doesn't have to be anything fancy; basically,
-anything that can show voltage changes faster than an oscilloscope display
-will capture is enough to get going. I picked up one of these cheap handheld
-[5012H scopes](https://www.google.com/search?q=5012h), which seem to be a generic
-model rebadged by countless Chinese brands. It does the job, but I'm considering
-nabbing a [Korg NTS-2](https://www.korg.com/uk/products/dj/nts_2_pt/); it may
-be less convenient for poking around on PCBs, but it looks perfect for hooking
-up directly to patch cables for a visual reference when noodling around with
-sound design, and does a few other useful synth-specific things in Euro-friendly
-voltage ranges.
-
 ### Bill of Materials
-
-The bits you'll need. Not including basics like a soldering iron, solder,
-spools of insulated wire, a breadboard, prototype board of choice, etc.
 
 1. One [notched, 10 pin, 2 row, 2.54mm pitch pin header](https://cpc.farnell.com/multicomp/mc-254-10-00-st-dip/connector-header-10pos-2row-2/dp/CN21917),
    for the power cable
@@ -123,10 +105,7 @@ spools of insulated wire, a breadboard, prototype board of choice, etc.
 6. One [dual-inline, 14 pin, 2.54mm pitch IC socket](https://cpc.farnell.com/unbranded/mc-2227-14-03-f1/socket-ic-dil-0-3-tube-34-14way/dp/SC08125)
    to house our op-amp chip
 7. One [TL074CN quad operational amplifier chip](https://cpc.farnell.com/texas-instruments/tl074cn/op-amp-3mhz-13v-us-dip-14/dp/SC17182), the brains of the operation
-   * Optional if you only plan on building the circuit on breadboard
-8. One [TL072CP dual operational amplifier chip](https://cpc.farnell.com/texas-instruments/tl072cp/ic-op-amp-dual-jfet-dip8/dp/SC17220), optional, for starting small(er)
-   * Only if you want to follow the breadboard layout below before soldering
-     anything; the final circuit only uses the TL074 above
+8. One [TL072CP dual operational amplifier chip](https://cpc.farnell.com/texas-instruments/tl072cp/ic-op-amp-dual-jfet-dip8/dp/SC17220), optional, for starting smaller on a breadboard first
 9. Four [100Ω resistors](https://cpc.farnell.com/unbranded/mf25-100r/resistor-0-25w-1-100r/dp/RE03721), again cheap metal film ones will suffice, to act as
    Rg in the voltage dividers for our non-inverting amplifiers
 10. Eight [1KΩ resistors](https://cpc.farnell.com/unbranded/mf25-1k/resistor-0-25w-1-1k/dp/RE03722), also cheap metal film; four to act as Rf in our
@@ -150,6 +129,25 @@ these prototype boards, I would be __very__ interested. At the moment I'm using
 them as just bare boards, and the potential for some piece of exposed circuit
 to touch something it shouldn't is uncomfortably high.
 
+### Tools
+
+Just the basics: soldering iron, spools of insulated wire, wire stripper/cutter,
+soldering mat, [PCB holder](https://cpc.farnell.com/duratool/d03170/pcb-holder/dp/SD02126),
+multimeter, etc. These [breadboard kits](https://cpc.farnell.com/pro-signal/psg08689/breadboardjumper-wire-kit/dp/PC02123)
+with a bunch of different included jumper wire lengths are pretty nice, too.
+
+Only other thing I'd say it's definitely worth having if you're getting into
+synth DIY is an oscilloscope. Doesn't have to be anything fancy; basically,
+anything that can show voltage changes faster than an oscilloscope display
+will capture is enough to get going. I picked up one of these cheap handheld
+[5012H scopes](https://www.google.com/search?q=5012h), which seem to be a generic
+model rebadged by countless Chinese brands. It does the job, but I'm considering
+nabbing a [Korg NTS-2](https://www.korg.com/uk/products/dj/nts_2_pt/); it may
+be less convenient for poking around on PCBs, but it looks perfect for hooking
+up directly to patch cables for a visual reference when noodling around with
+sound design, and does a few other useful synth-specific things in Euro-friendly
+voltage ranges.
+
 ### Diagram
 
 * Take care when soldering polarised components:
@@ -161,7 +159,7 @@ to touch something it shouldn't is uncomfortably high.
     body closest to that leg.
   * In both cases I've labelled the terminals on the diagram for clarity.
 * Also, make sure you get the TL074CN the right way round: there should be a
-  circular notch in the casing on one side, and/or a circle in the same corner
+  semicircular notch in the casing on one side, and/or a circle in the same corner
   as pin 1.
 * It's not too uncommon to see a single circuit diagram broken into sections.
   Typically one like this would probably only normally be broken into two,
@@ -176,6 +174,17 @@ to touch something it shouldn't is uncomfortably high.
     suggestions.
 
 ![Circuit diagram for basic consumer-line-level to Eurorack-level audio amplifier](/article-images/diy-amp/circuit-diagram.png)
+
+### Elsewhere...
+
+For the sake of completeness, this is the kind of thing I'm talking about when
+stating that other circuit diagrams may be less explicit about the relationship
+between how chips are powered, and how they are used. Taken from the
+[mki x es.EDU VCO build guide](https://www.ericasynths.lv/media/VCO_MANUAL_v2.pdf);
+I don't know what the license on that is, but I think using it for this kind of
+educational purpose is certainly within the spirit of things.
+
+![Example op-amp/chip diagram separation elsewhere](/article-images/diy-amp/alt-amp-diagram.png)
 
 ### Breadboarding
 
@@ -299,7 +308,8 @@ numbers for the components we have until something looks right.
 ## Fin
 
 I think I'm off to snap off a square of prototype board and solder another one
-of those _vintage_ power conditioners, because they're as good as I need at
+of those _vintage_ power conditioners, with pin headers for detachable jumper wires,
+because they're as good as I need at
 the moment, and I'm sick of breadboarding them from scratch.
 
 Peace out.

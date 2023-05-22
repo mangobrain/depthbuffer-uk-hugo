@@ -14,6 +14,13 @@ This article is part of my series on building a Eurorack audio amplifier, to
 go from line-out on a field recorder or Raspberry Pi to my modular synth rack.
 To start from the beginning, [click here](/posts/2023-05-21-babys-first-amplifier/).
 
+This is part of my [Memento Potato project](/posts/2023-04-22-memento-potato/),
+in which I am ostensibly producing [my third album](https://depthbuffer.bandcamp.com/album/memento-potato) and releasing each track as & when it's done,
+but also using it as a vehicle for tons of other things I've wanted to
+build/film/explain/nerd out about along the way.
+
+Picking up where we left of...
+
 ## Why is the audio quiet in the first place?
 
 Well, it turns out that Eurorack
